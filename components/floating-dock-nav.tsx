@@ -1,7 +1,7 @@
 "use client"
 
 import { FloatingDock } from "@/components/ui/floating-dock"
-import { Home, User, Code2, Briefcase, FolderKanban, Users, GraduationCap, Mail } from "lucide-react"
+import { Home, User, Code2, Briefcase, FolderKanban, Users, GraduationCap, Mail, Trophy } from "lucide-react"
 
 const navItems = [
   {
@@ -38,6 +38,11 @@ const navItems = [
     title: "Education",
     icon: <GraduationCap className="h-full w-full" />,
     href: "#education",
+  },
+  {
+    title: "Achievements",
+    icon: <Trophy className="h-full w-full" />,
+    href: "#achievements",
   },
   {
     title: "Contact",
