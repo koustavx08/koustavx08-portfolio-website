@@ -45,7 +45,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={`${inter.variable} ${geistMono.variable} font-sans antialiased`}>
         {/* Ripple effect removed from global layout. Now only in hero section. */}
-        <MantineProvider>
+        <MantineProvider theme={{ primaryColor: 'blue' }}>
           <div className="relative z-10">{children}</div>
         </MantineProvider>
         <Analytics />
