@@ -1,4 +1,5 @@
 import type React from "react"
+import { MantineProvider } from "@mantine/core"
 import type { Metadata, Viewport } from "next"
 import { Inter, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
@@ -43,7 +44,9 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={`${inter.variable} ${geistMono.variable} font-sans antialiased`}>
         {/* Ripple effect removed from global layout. Now only in hero section. */}
-        <div className="relative z-10">{children}</div>
+        <MantineProvider>
+          <div className="relative z-10">{children}</div>
+        </MantineProvider>
         <Analytics />
       </body>
     </html>
