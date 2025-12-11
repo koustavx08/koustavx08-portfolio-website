@@ -8,62 +8,97 @@ import { BackgroundGradient } from "./ui/background-gradient"
 
 const projects = [
   {
-    title: "AI Nutrition Tracker",
-    tagline: "AI-powered calorie detection PWA",
-    techStack: ["Next.js 14", "TypeScript", "Groq API", "PWA"],
+    title: "synthamint-platform",
+    tagline: "AI-powered NFT minting platform transforming creative ideas into unique digital assets",
+    techStack: ["TypeScript", "Next.js", "IPFS", "Solidity"],
     highlights: [
-      "Image-based calorie detection using AI",
+      "AI-assisted metadata & media generation for NFTs",
+      "Minting pipeline with decentralized storage (IPFS)",
+      "Admin tooling for collection management and royalties",
+    ],
+    metrics: "Public · TypeScript",
+    live: "https://synthamint-platform.vercel.app/",
+    github: "https://github.com/koustavx08/synthamint-platform",
+  },
+  {
+    title: "atscribe",
+    tagline: "Production-ready MERN app for creating ATS-optimized resumes using AI",
+    techStack: ["TypeScript", "React", "Node.js", "MongoDB"],
+    highlights: [
+      "End-to-end resume generation with AI prompts and templates",
+      "ATS-friendly formatting and export to PDF",
+      "Conversational editing and versioned resume drafts",
+    ],
+    metrics: "Public · TypeScript",
+    live: "https://atscribe.vercel.app/",
+    github: "https://github.com/koustavx08/atscribe",
+  },
+  {
+    title: "calorie-detector-app",
+    tagline: "AI-powered nutrition tracker with real-time analysis and voice assistant",
+    techStack: ["TypeScript", "Next.js", "Groq API", "PWA"],
+    highlights: [
+      "Image-based calorie detection using AI vision APIs",
       "Voice assistant for hands-free tracking",
-      "Comprehensive macro dashboard",
-      "Dark/light mode with installable PWA",
+      "Macro dashboard and offline-capable PWA",
     ],
-    metrics: "1K+ active users",
-    live: "https://nutrition-tracker.vercel.app",
-    github: "https://github.com/koustavx08/nutrition-tracker",
+    metrics: "Public · TypeScript",
+    live: "https://calorie-detector-app-koustavx08.vercel.app/",
+    github: "https://github.com/koustavx08/calorie-detector-app",
   },
   {
-    title: "Web3 Booking Platform",
-    tagline: "Decentralized booking dApp with smart contracts",
-    techStack: ["Solidity", "Web3.js", "React", "Supabase"],
+    title: "chat-app",
+    tagline: "Full-stack chat & messaging application using Socket.IO and MongoDB",
+    techStack: ["TypeScript", "React", "Node.js", "Socket.IO"],
     highlights: [
-      "On-chain payments with escrow system",
-      "Smart contract-based booking management",
-      "IPFS integration for decentralized storage",
-      "MetaMask wallet integration",
+      "Real-time messaging with rooms and typing indicators",
+      "Persistent message storage with MongoDB",
+      "User presence, read receipts, and media support",
     ],
-    metrics: "Blockchain-powered",
-    live: "https://web3-booking.vercel.app",
-    github: "https://github.com/koustavx08/web3-booking",
+    metrics: "Public · TypeScript",
+    live: "https://chat-app-x08.vercel.app/",
+    github: "https://github.com/koustavx08/chat-app",
   },
   {
-    title: "Event Management Platform",
-    tagline: "Real-time event tracking and management",
-    techStack: ["MERN", "Socket.io", "Clerk", "Firebase"],
+    title: "event-organizer",
+    tagline: "Full-featured event management platform built with Next.js and MongoDB",
+    techStack: ["TypeScript", "Next.js", "MongoDB", "Clerk"],
     highlights: [
-      "Real-time attendance tracking via Socket.io",
-      "QR code-based check-in system",
-      "Admin analytics dashboard",
-      "Handles 500+ concurrent users",
+      "Real-time attendance tracking and QR check-in",
+      "Admin analytics dashboard and role-based access",
+      "Designed for large events (500+ concurrent users)",
     ],
-    metrics: "500+ concurrent users",
-    live: "https://event-platform.vercel.app",
-    github: "https://github.com/koustavx08/event-platform",
+    metrics: "Public · TypeScript",
+    live: "https://event-organizer-koustavx08.vercel.app/",
+    github: "https://github.com/koustavx08/event-organizer",
   },
   {
-    title: "AI Content Platform",
-    tagline: "Multi-model AI content generation",
-    techStack: ["Next.js", "OpenAI", "Gemini API", "Redis"],
+    title: "web3-todo-dapp",
+    tagline: "Decentralized task management with NFT rewards and streak tracking",
+    techStack: ["TypeScript", "React", "Solidity", "Avalanche (Fuji)"],
     highlights: [
-      "OpenAI & Gemini API integration",
-      "Token optimization and caching",
-      "Automated content workflows",
-      "Serves 2K+ daily requests",
+      "On-chain rewards via NFT minting for task completion",
+      "Task delegation and persistent streak tracking",
+      "Frontend integration with wallet providers and testnet deployment",
     ],
-    metrics: "2K+ daily requests",
-    live: "https://ai-content.vercel.app",
-    github: "https://github.com/koustavx08/ai-content",
+    metrics: "Public · TypeScript",
+    live: "https://web3-todo-dapp-alpha.vercel.app/",
+    github: "https://github.com/koustavx08/web3-todo-dapp",
   },
 ]
+
+function slugToTitle(slug: string) {
+  // handle common separators and camelCase
+  const spaced = slug
+    // replace separators with space
+    .replace(/[-_]/g, " ")
+    // insert spaces before capital letters in camelCase
+    .replace(/([a-z])([A-Z])/g, "$1 $2")
+  return spaced
+    .split(" ")
+    .map((w) => (w.length > 2 ? w[0].toUpperCase() + w.slice(1) : w)) // keep small words as-is or capitalized
+    .join(" ")
+}
 
 export function ProjectsSection() {
   return (
@@ -76,15 +111,20 @@ export function ProjectsSection() {
             <BackgroundGradient key={index} className="rounded-2xl h-full" containerClassName="rounded-2xl h-full">
               <NeoCard hover glowOnHover className="p-6 group h-full bg-card">
                 <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground group-hover:text-accent-blue transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm mt-1">{project.tagline}</p>
+                  <div className="flex flex-col gap-1 w-full">
+                    <div className="flex items-center gap-3">
+                      <h3 className="text-xl font-bold text-foreground group-hover:text-accent-blue transition-colors whitespace-nowrap">
+                        {slugToTitle(project.title)}
+                      </h3>
+                      <span
+                        className="px-3 py-1 text-xs rounded-full bg-linear-to-r from-accent-blue/20 to-accent-cyan/20 text-accent-blue font-semibold shadow-neo-sm border border-accent-blue/20 whitespace-nowrap"
+                        aria-label={project.metrics}
+                      >
+                        {project.metrics}
+                      </span>
+                    </div>
+                    <p className="text-muted-foreground text-sm">{project.tagline}</p>
                   </div>
-                  <span className="px-3 py-1 text-xs rounded-full bg-accent-blue/10 text-accent-blue font-medium">
-                    {project.metrics}
-                  </span>
                 </div>
 
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -113,16 +153,28 @@ export function ProjectsSection() {
                 </ul>
 
                 <div className="flex gap-3 mt-auto">
-                  <NeoButton asChild variant="primary" size="sm">
-                    <a href={project.live} target="_blank" rel="noopener noreferrer">
+                  <NeoButton asChild variant="primary" size="sm" className="min-w-[100px] justify-center">
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 w-full justify-center"
+                      aria-label={`View ${project.title} live`}
+                    >
                       <ExternalLink className="w-4 h-4" aria-hidden />
-                      Live
+                      <span className="font-semibold text-sm">Live</span>
                     </a>
                   </NeoButton>
-                  <NeoButton asChild variant="secondary" size="sm">
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                  <NeoButton asChild variant="secondary" size="sm" className="min-w-[100px] justify-center">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 w-full justify-center"
+                      aria-label={`Explore ${project.title} repo on GitHub`}
+                    >
                       <Github className="w-4 h-4" aria-hidden />
-                      Explore repo
+                      <span className="font-semibold text-sm">Explore repo</span>
                     </a>
                   </NeoButton>
                 </div>
@@ -130,6 +182,20 @@ export function ProjectsSection() {
             </BackgroundGradient>
           ))}
         </div>
+      </div>
+      <div className="flex justify-center mt-12">
+        <NeoButton asChild variant="primary" size="lg" className="px-6 py-3 font-bold text-lg shadow-neo-lg animate-pulse">
+          <a
+            href="https://github.com/koustavx08?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="See more projects on GitHub"
+            className="flex items-center gap-3"
+          >
+            <Github className="w-5 h-5" aria-hidden />
+            More Projects are live at GitHub — do checkout!
+          </a>
+        </NeoButton>
       </div>
     </section>
   )
