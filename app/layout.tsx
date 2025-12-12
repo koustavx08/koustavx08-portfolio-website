@@ -1,6 +1,6 @@
 import type React from "react"
 import { MantineProvider } from "@mantine/core"
-import '@mantine/core/styles.css'
+// import '@mantine/core/styles.css'
 import type { Metadata, Viewport } from "next"
 import { Inter, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
