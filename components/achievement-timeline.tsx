@@ -92,7 +92,7 @@ export const achievementsData = [
   {
   title: "Co-Founder — CloudBoot AI",
   subtitle: "Building AI-driven Server Security Automation Startup",
-  date: "2026",
+  date: "Nov 2025 - Present",
   meta: "AI · Cybersecurity · Blockchain Audit Layer",
   details:
     "Co-founded CloudBoot AI and buiding the company and product from the ground up — architecting an agent-based real-time threat detection system with anomaly scoring, automated mitigation workflows, blockchain-logged threat signatures, and a peer defense mesh for distributed alerting.",
