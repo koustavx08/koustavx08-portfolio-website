@@ -4,9 +4,10 @@ export function Footer() {
   return (
     <footer className="py-8 px-4 border-t border-border/50">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Koustav Singh. All rights reserved.
-        </p>
+        <div>
+          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Koustav Singh. All rights reserved.</p>
+          <p className="text-xs text-muted-foreground/80 mt-1">Privacy note: this site intentionally shares only professional public contact information.</p>
+        </div>
 
         <div className="flex items-center gap-4">
           <a

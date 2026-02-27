@@ -1,47 +1,64 @@
 import { SectionHeader } from "./section-header"
 import { NeoCard } from "./neo-card"
-import { Users, Award, Calendar } from "lucide-react"
+import { Users, Handshake, Megaphone, BookOpen } from "lucide-react"
 import { BackgroundGradient } from "./ui/background-gradient"
 
-const leadership = [
+const communityRoles = [
+  {
+    title: "Core Team Member",
+    organization: "DropoutHacks",
+    description:
+      "Leading sponsorship and partnership operations for a builder-first hackathon ecosystem expecting 3,000+ participants.",
+    icon: Handshake,
+    highlights: ["Sponsorship Pipeline", "Partnership Outreach", "3,000+ Expected Builders"],
+  },
+  {
+    title: "Core Team Member",
+    organization: "Machine Learning Kolkata",
+    description:
+      "Supporting community programming and technical collaboration initiatives for ML learners and practitioners.",
+    icon: Users,
+    highlights: ["Community Programs", "Technical Sessions", "Ecosystem Collaboration"],
+  },
+  {
+    title: "Core Team Member",
+    organization: "React Kolkata",
+    description:
+      "Contributing to React-focused developer engagement through events, knowledge sharing, and peer learning.",
+    icon: Megaphone,
+    highlights: ["React Community", "Developer Engagement", "Knowledge Sharing"],
+  },
   {
     title: "Mentor",
-    organization: "Open Source Connect & GSSoC",
-    description: "Mentored 50+ developers across full-stack, AI/ML, and Web3 stacks. Provided architectural guidance on scalability and clean API design.",
-    icon: Users,
-    highlights: ["50+ Mentees Guided", "+30% Project Completion", "Reduced Onboarding Time"],
+    organization: "Open Source Connect",
+    description: "Mentoring contributors on open-source workflows, code quality, and maintainable engineering practices.",
+    icon: BookOpen,
+    highlights: ["Open Source Mentorship", "Code Reviews", "Contributor Enablement"],
+  },
+  {
+    title: "Mentor",
+    organization: "GirlScript Summer of Code",
+    description: "Guiding student contributors on practical project execution and collaborative software development.",
+    icon: BookOpen,
+    highlights: ["Contributor Guidance", "Project Delivery", "Community Support"],
   },
   {
     title: "Organiser",
-    organization: "Open Odyssey 2.0 (MLH Hacktoberfest)",
-    description: "Co-led a large-scale open-source program with 200+ developers. Designed learning pathways enabling beginners to ship production-ready PRs.",
-    icon: Award,
-    highlights: ["200+ Developers", "Web3, AI/ML & Cloud", "Boosted PR Acceptance"],
-  },
-  {
-    title: "Organiser",
-    organization: "EDUC-A-THON 2.0",
-    description: "Organised a national-level hackathon with 1400+ participants. Managed logistics , outreach, and the 9-hour innovation sprint for 20 finalist teams.",
-    icon: Award,
-    highlights: ["1400+ Participants", "National Level Hackathon", "Operational Blueprint"],
-  },
-    {
-    title: "Community Contributor",
-    organization: "Hacktoberfest & Open Source",
-    description: "Active contributor to various open-source projects, focusing on scalability and security best practices.",
+    organization: "Open Odyssey 2.0 (MLH Hacktoberfest 2025)",
+    description: "Organised a public open-source event stream focused on learning, shipping, and contributor outcomes.",
     icon: Users,
-    highlights: ["Multiple PRs merged", "Security improvements", "Documentation"],
+    highlights: ["Program Operations", "Open-Source Focus", "Builder Outcomes"],
   },
 ]
 
 export function LeadershipSection() {
   return (
-    <section id="leadership" className="py-20 px-4">
+    <section id="community" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        <SectionHeader title="Leadership & Community" subtitle="Giving back to the community" />
+        <SectionHeader title="Community & Ecosystem" subtitle="Where I contribute beyond product delivery" />
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {leadership.map((item, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {communityRoles.map((item, index) => (
             <BackgroundGradient
               key={index}
               className="rounded-2xl h-full"
@@ -63,10 +80,7 @@ export function LeadershipSection() {
 
                 <div className="flex flex-wrap gap-2">
                   {item.highlights.map((highlight, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 text-xs rounded-full bg-card shadow-neo-inset text-muted-foreground"
-                    >
+                    <span key={i} className="px-3 py-1 text-xs rounded-full bg-card shadow-neo-inset text-muted-foreground">
                       {highlight}
                     </span>
                   ))}

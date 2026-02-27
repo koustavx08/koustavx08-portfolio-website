@@ -5,10 +5,9 @@ import { useState } from "react"
 import { SectionHeader } from "./section-header"
 import { NeoCard } from "./neo-card"
 import { NeoButton } from "./neo-button"
-import { Phone, Mail, Linkedin, Github, Globe, Send, CheckCircle, Loader2 } from "lucide-react"
+import { Mail, Linkedin, Github, Send, CheckCircle, Loader2 } from "lucide-react"
 
 const contactInfo = [
-  { icon: Phone, label: "Phone", value: "+91-7980072154", href: "tel:+917980072154" },
   {
     icon: Mail,
     label: "Email",
@@ -119,7 +118,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-24 px-4 bg-background/80">
       <div className="max-w-4xl mx-auto flex flex-col items-center justify-center">
-        <SectionHeader title="Get In Touch" subtitle="Let's build something amazing together" />
+        <SectionHeader title="Get In Touch" subtitle="For product, engineering, and collaboration opportunities" />
 
         <div className="w-full flex flex-col lg:flex-row gap-12 items-center justify-center mt-10">
           {/* Contact Info */}
