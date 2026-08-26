@@ -81,25 +81,69 @@ export const achievementsData = [
     icon: <GitBranch className="w-6 h-6" />,
   },
   {
-    title: "Organiser — Educathon 2.0",
-    subtitle: "Event Organizer & Reviewer",
-    date: "Nov 2025",
-    meta: "Educathon 2.0",
+    title: "Open Odyssey 2.0 Organiser",
+    subtitle: "MLH 2025",
+    date: "Oct 2025",
+    meta: "MLH Hackathon Program",
     details:
-      "Organised Educathon 2.0: planned logistics, mentored participants, reviewed submissions and coordinated judges.",
-    icon: <Calendar className="w-6 h-6" />,
+      "Organized large-scale open-source program with 200+ developers. Learning pathways for beginners.",
+    icon: <Award className="w-6 h-6" />,
   },
   {
-  title: "Co-Founder — CloudBoot AI",
-  subtitle: "Building AI-driven Server Security Automation Startup",
-  date: "Nov 2025 - Present",
-  meta: "AI · Cybersecurity · Blockchain Audit Layer",
-  details:
-    "Co-founded CloudBoot AI and buiding the company and product from the ground up — architecting an agent-based real-time threat detection system with anomaly scoring, automated mitigation workflows, blockchain-logged threat signatures, and a peer defense mesh for distributed alerting.",
-  icon: <Shield className="w-6 h-6" />,
-},
-];
-
+    title: "Dol Tech Labs — SDE",
+    subtitle: "Software Development Engineer",
+    date: "June 2026 – Present",
+    meta: "Current Role",
+    details:
+      "Contributing to scalable software solutions and developer-focused products at Dol Tech Labs.",
+    icon: <Shield className="w-6 h-6" />,
+  },
+  {
+    title: "Samarth TMSL — Technical Co Head",
+    subtitle: "Technical Leadership",
+    date: "June 2026 – Present",
+    meta: "Promoted Role",
+    details:
+      "Leading technical initiatives and mentoring web development team at Samarth TMSL.",
+    icon: <Award className="w-6 h-6" />,
+  },
+  {
+    title: "CalTech Circle — PR & Outreach Lead",
+    subtitle: "Community Leadership",
+    date: "March 2026 – Present",
+    meta: "Community Expansion",
+    details:
+      "PR, Partnerships, Outreach. Expanding community reach with builders, developers, and innovators.",
+    icon: <Users className="w-6 h-6" />,
+  },
+  {
+    title: "DropoutHacks — Core Team Member",
+    subtitle: "Hackathon Organization",
+    date: "Jan 2026 – Present",
+    meta: "3,000+ Participants",
+    details:
+      "Hackathon organization, sponsor outreach, event planning, and community coordination.",
+    icon: <Award className="w-6 h-6" />,
+  },
+  {
+    title: "GirlScript Summer of Code — Mentor",
+    subtitle: "Full-Stack Mentorship",
+    date: "Jul 2025 – Jan 2026",
+    meta: "Open-Source Mentorship",
+    details:
+      "Mentored students in full-stack web development. Open-source collaboration, PR quality, and code review.",
+    icon: <Shield className="w-6 h-6" />,
+  },
+  {
+    title: "Open Source Connect — Mentor",
+    subtitle: "Developer Mentorship",
+    date: "Aug 2025 – Dec 2025",
+    meta: "Early-Career Mentorship",
+    details:
+      "Mentored early-career developers. Git and GitHub workflows, collaborative coding practices.",
+    icon: <Users className="w-6 h-6" />,
+  },
+]
 
 export function AchievementsSection() {
   return (
@@ -108,7 +152,7 @@ export function AchievementsSection() {
         <SectionHeader title="Achievements" subtitle="Selected wins & milestones" />
         <Timeline
           radius="md"
-          active={8}
+          active={achievementsData.length}
           lineWidth={5}
           bulletSize={26}
           align="left"

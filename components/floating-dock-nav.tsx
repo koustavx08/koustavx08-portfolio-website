@@ -15,14 +15,14 @@ const navItems = [
     href: "#about",
   },
   {
-    title: "Skills",
-    icon: <Code2 className="h-full w-full" />,
-    href: "#skills",
-  },
-  {
     title: "Experience",
     icon: <Briefcase className="h-full w-full" />,
     href: "#experience",
+  },
+  {
+    title: "Skills",
+    icon: <Code2 className="h-full w-full" />,
+    href: "#skills",
   },
   {
     title: "Projects",
@@ -35,14 +35,14 @@ const navItems = [
     href: "#leadership",
   },
   {
-    title: "Education",
-    icon: <GraduationCap className="h-full w-full" />,
-    href: "#education",
-  },
-  {
     title: "Achievements",
     icon: <Trophy className="h-full w-full" />,
     href: "#achievements",
+  },
+  {
+    title: "Education",
+    icon: <GraduationCap className="h-full w-full" />,
+    href: "#education",
   },
   {
     title: "Contact",

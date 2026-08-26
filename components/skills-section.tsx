@@ -5,24 +5,24 @@ import { BackgroundGradient } from "./ui/background-gradient"
 
 const skillCategories = [
   {
-    title: "Languages",
+    title: "Full-Stack Development",
     icon: Code,
-    skills: ["JavaScript", "TypeScript", "Python", "Solidity", "SQL", "HTML/CSS"],
+    skills: ["React.js", "Next.js 14", "TypeScript", "JavaScript", "HTML/CSS"],
   },
   {
-    title: "Frontend",
-    icon: Layout,
-    skills: ["React.js", "Next.js 14", "Redux", "Tailwind CSS", "shadcn/ui", "PWA", "Responsive Design"],
-  },
-  {
-    title: "Backend",
+    title: "Backend Engineering",
     icon: Server,
-    skills: ["Node.js", "Express.js", "REST APIs", "GraphQL", "Microservices", "System Design"],
+    skills: ["Node.js", "Express.js", "REST APIs", "GraphQL", "MongoDB", "PostgreSQL"],
   },
   {
     title: "Databases & Cloud",
     icon: Database,
-    skills: ["MongoDB", "PostgreSQL", "Supabase", "Firebase", "MySQL", "Redis"],
+    skills: ["MongoDB", "PostgreSQL", "Supabase", "Firebase", "Redis"],
+  },
+  {
+    title: "AI / Generative Tech",
+    icon: Brain,
+    skills: ["LLMs", "Groq API", "OpenAI", "Gemini API", "Prompt Engineering"],
   },
   {
     title: "Web3 & Blockchain",
@@ -30,14 +30,9 @@ const skillCategories = [
     skills: ["Smart Contracts", "Solidity", "Web3.js", "Ethers.js", "DApps", "MetaMask Integration"],
   },
   {
-    title: "AI/ML",
-    icon: Brain,
-    skills: ["LLMs", "Groq API", "OpenAI", "Gemini API", "Generative AI", "AI Workflows", "Prompt Engineering"],
-  },
-  {
-    title: "Tools & DevOps",
+    title: "Tools & Platforms",
     icon: Wrench,
-    skills: ["Git", "GitHub", "Docker", "CI/CD", "Agile/Scrum", "Clerk Auth", "Stripe/Payment Gateways"],
+    skills: ["Git", "GitHub", "Docker", "CI/CD", "Agile/Scrum", "Clerk Auth", "Stripe"],
   },
 ]
 

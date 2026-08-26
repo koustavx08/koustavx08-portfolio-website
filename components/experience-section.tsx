@@ -7,6 +7,88 @@ import { BackgroundGradient } from "./ui/background-gradient"
 
 const timelineData = [
   {
+    title: "Software Development Engineer",
+    subtitle: "Dol Tech Labs",
+    date: "June 2026 – Present",
+    location: "Kolkata",
+    content: (
+      <BackgroundGradient className="rounded-2xl" containerClassName="rounded-2xl">
+        <NeoCard className="p-6 bg-card" hover>
+          <h3 className="text-xl font-bold text-foreground mb-1">SDE - Software Development Engineer</h3>
+          <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
+            <span className="flex items-center gap-1">
+              <MapPin className="w-4 h-4" />
+              Kolkata, India
+            </span>
+          </div>
+          <ul className="space-y-2">
+            <li className="flex items-start gap-2 text-muted-foreground">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              Contributing to scalable software solutions and developer-focused products
+            </li>
+            <li className="flex items-start gap-2 text-muted-foreground">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              Collaborating on application development and system design
+            </li>
+            <li className="flex items-start gap-2 text-muted-foreground">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              Technical problem solving and product discussions
+            </li>
+            <li className="flex items-start gap-2 text-muted-foreground">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              Feature implementation, testing and deployment workflows
+            </li>
+            <li className="flex items-start gap-2 text-muted-foreground">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              Engineering best practices and modern development tools
+            </li>
+          </ul>
+        </NeoCard>
+      </BackgroundGradient>
+    ),
+  },
+  {
+    title: "Technical Co Head",
+    subtitle: "Samarth TMSL",
+    date: "June 2026 – Present",
+    location: "Kolkata",
+    content: (
+      <BackgroundGradient className="rounded-2xl" containerClassName="rounded-2xl">
+        <NeoCard className="p-6 bg-card" hover>
+          <h3 className="text-xl font-bold text-foreground mb-1">Technical Co Head</h3>
+          <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
+            <span className="flex items-center gap-1">
+              <MapPin className="w-4 h-4" />
+              Kolkata, India
+            </span>
+            <span className="flex items-center gap-1">
+              <Calendar className="w-4 h-4" />
+              Jun 2026 – Present
+            </span>
+          </div>
+          <ul className="space-y-2">
+            <li className="flex items-start gap-2 text-muted-foreground">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              Leading technical initiatives and overseeing development of student-focused platforms
+            </li>
+            <li className="flex items-start gap-2 text-muted-foreground">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              Mentoring the web development team and driving technical projects
+            </li>
+            <li className="flex items-start gap-2 text-muted-foreground">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              Collaborating with cross-functional teams and delivering scalable solutions
+            </li>
+            <li className="flex items-start gap-2 text-muted-foreground">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              Streamlining development workflows and supporting community events through technology
+            </li>
+          </ul>
+        </NeoCard>
+      </BackgroundGradient>
+    ),
+  },
+  {
     title: "2024 - Present",
     content: (
       <BackgroundGradient className="rounded-2xl" containerClassName="rounded-2xl">

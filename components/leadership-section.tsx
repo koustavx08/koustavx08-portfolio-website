@@ -1,6 +1,6 @@
 import { SectionHeader } from "./section-header"
 import { NeoCard } from "./neo-card"
-import { Users, Award, Calendar } from "lucide-react"
+import { Users, Award, Calendar, GitBranch, Star, Flag } from "lucide-react"
 import { BackgroundGradient } from "./ui/background-gradient"
 
 const leadership = [
@@ -21,16 +21,63 @@ const leadership = [
   {
     title: "Organiser",
     organization: "EDUC-A-THON 2.0",
-    description: "Organised a national-level hackathon with 1400+ participants. Managed logistics , outreach, and the 9-hour innovation sprint for 20 finalist teams.",
+    description: "Organised a national-level hackathon with 1400+ participants. Managed logistics, outreach, and the 9-hour innovation sprint for 20 finalist teams.",
     icon: Award,
     highlights: ["1400+ Participants", "National Level Hackathon", "Operational Blueprint"],
   },
-    {
-    title: "Community Contributor",
-    organization: "Hacktoberfest & Open Source",
-    description: "Active contributor to various open-source projects, focusing on scalability and security best practices.",
+  {
+    title: "PR and Outreach Lead",
+    organization: "CalTech Circle",
+    date: "March 2026 – Present",
+    description: "PR, Partnerships, Outreach. Expanding community reach. Working with builders, developers, designers, founders, and innovators.",
     icon: Users,
-    highlights: ["Multiple PRs merged", "Security improvements", "Documentation"],
+    highlights: ["Community Reach Expansion", "Builder & Developer Engagement", "Cross-functional Partnerships"],
+  },
+  {
+    title: "Core Team Member",
+    organization: "DropoutHacks",
+    date: "January 2026 – Present",
+    description: "Hackathon organization, sponsor outreach, event planning, and community coordination.",
+    icon: Award,
+    highlights: ["3,000+ Participants", "Sponsor Coordination", "Workshop Delivery"],
+  },
+  {
+    title: "Core Team Member",
+    organization: "Machine Learning Kolkata",
+    date: "December 2025 – Present",
+    description: "",
+  },
+  {
+    title: "Core Team Member",
+    organization: "React Kolkata",
+    date: "November 2025 – Present",
+    description: "",
+  },
+  {
+    title: "Miro Meetups Ambassador (APAC)",
+    organization: "Miro",
+    date: "March 2026 – July 2026",
+    description: "Organized meetups in Kolkata. Community building. Partnerships with local tech organizations.",
+    icon: Award,
+    highlights: ["Kolkata Meetups", "Local Tech Partnerships", "Collaborative Workflows"],
+  },
+  {
+    title: "Mentor",
+    organization: "GirlScript Summer of Code",
+    date: "July 2025 – January 2026",
+    description: "Mentored students in full-stack web development. Open-source collaboration, PR quality, issue resolution, and code review.",
+  },
+  {
+    title: "Mentor",
+    organization: "Open Source Connect",
+    date: "August 2025 – December 2025",
+    description: "Mentored early-career developers. Git and GitHub workflows, individual and group mentoring, collaborative coding practices.",
+  },
+  {
+    title: "Open Odyssey 2.0 Organiser",
+    organization: "MLH 2025",
+    date: "October 2025",
+    description: "Large-scale open-source program organization with MLH.",
   },
 ]
 
@@ -51,26 +98,37 @@ export function LeadershipSection() {
               <NeoCard className="p-6 h-full bg-card" hover>
                 <div className="flex items-center gap-3 mb-4">
                   <div className="p-3 rounded-xl bg-accent-blue/10 text-accent-blue">
-                    <item.icon className="w-6 h-6" />
+                    {item.icon && <item.icon className="w-6 h-6" />}
                   </div>
                   <div>
                     <h3 className="font-bold text-foreground">{item.title}</h3>
-                    <p className="text-sm text-accent-blue">{item.organization}</p>
+                    {item.date && <p className="text-sm text-accent-blue">{item.date}</p>}
+                    {item.organization && <p className="text-sm text-accent-blue">{item.organization}</p>}
                   </div>
                 </div>
 
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{item.description}</p>
+                {item.description && (
+                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{item.description}</p>
+                )}
 
-                <div className="flex flex-wrap gap-2">
-                  {item.highlights.map((highlight, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 text-xs rounded-full bg-card shadow-neo-inset text-muted-foreground"
-                    >
-                      {highlight}
-                    </span>
-                  ))}
-                </div>
+                {item.highlights && item.highlights.length > 0 && (
+                  <div className="flex flex-wrap gap-2">
+                    {item.highlights.map((highlight, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 text-xs rounded-full bg-card shadow-neo-inset text-muted-foreground"
+                      >
+                        {highlight}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {!item.description && item.date && (
+                  <p className="text-muted-foreground text-xs mb-4">
+                    {item.date}
+                  </p>
+                )}
               </NeoCard>
             </BackgroundGradient>
           ))}

@@ -32,7 +32,7 @@ export function HeroSection() {
           <div className="rounded-full bg-card shadow-neo-soft p-1">
             <div className="relative">
               <div className="w-32 h-32 rounded-full bg-card-elevated shadow-neo-lg p-1">
-                <div className="w-full h-full rounded-full bg-linear-to-br from-accent-blue/20 to-accent-cyan/20 flex items-center justify-center overflow-hidden">
+                <div className="w-full h-full rounded-full flex items-center justify-center overflow-hidden from-accent-blue/20 to-accent-cyan/20">
                   <img
                     src="/profile-pixelated.png"
                     alt="Koustav Singh profile"
@@ -50,7 +50,7 @@ export function HeroSection() {
         {/* Name & Title */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-4 text-balance">Koustav Singh</h1>
         <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-accent-blue mb-6">
-          Full-Stack MERN & Web3 Developer
+          Full-Stack Software Engineer & Web3 Developer | Building Scalable, User-Centric Applications
         </h2>
 
         {/* Tagline */}

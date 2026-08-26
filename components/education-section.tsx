@@ -6,7 +6,7 @@ const educationData = [
   {
     institution: "Techno Main Salt Lake",
     degree: "B.Tech in Information Technology",
-    meta: "Expected Graduation: 2028",
+    meta: "August 2024 – June 2028",
     duration: "Aug 2024 – Jun 2028",
     location: "Kolkata, India",
     score: null,
@@ -54,21 +54,21 @@ export function EducationSection() {
                         {item.score}
                       </div>
                     )}
-                  </div>
 
-                  {item.meta && (
-                     <p className="text-sm text-foreground/80 mb-4">{item.meta}</p>
-                  )}
+                    {item.meta && (
+                       <p className="text-sm text-foreground/80 mb-4">{item.meta}</p>
+                    )}
 
-                  <div className={`flex flex-wrap gap-4 text-sm text-muted-foreground ${!item.meta ? "mt-4" : ""}`}>
-                    <span className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4" />
-                      {item.duration}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <MapPin className="w-4 h-4" />
-                      {item.location}
-                    </span>
+                    <div className={`flex flex-wrap gap-4 text-sm text-muted-foreground ${!item.meta ? "mt-4" : ""}`}>
+                      <span className="flex items-center gap-1">
+                        <Calendar className="w-4 h-4" />
+                        {item.duration}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <MapPin className="w-4 h-4" />
+                        {item.location}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
