@@ -12,7 +12,7 @@ type ExperienceEntry = {
   location: string
   content: React.ReactNode
   startDate: string
-  year: string
+  year?: string
 }
 
 const parseStartDate = (dateString: string): Date => {
@@ -307,11 +307,15 @@ const timelineData: ExperienceEntry[] = [
 ]
 
 export function ExperienceSection() {
-  const sortedExperiences = [...timelineData].sort((a, b) => {
-    const dateA = parseStartDate(a.startDate).getTime()
-    const dateB = parseStartDate(b.startDate).getTime()
-    return dateB - dateA
-  })
+  const sortedExperiences = [...timelineData]
+    .sort((a, b) => {
+      const dateA = parseStartDate(a.startDate).getTime()
+      const dateB = parseStartDate(b.startDate).getTime()
+      return dateB - dateA
+    })
+    .map((entry, index, sorted) =>
+      index > 0 && entry.year === sorted[index - 1].year ? { ...entry, year: undefined } : entry,
+    )
 
   return (
     <section id="experience" className="py-20">
