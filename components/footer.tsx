@@ -1,39 +1,28 @@
-import { Github, Linkedin, Mail } from "lucide-react"
+import { DATA } from "@/data/resume"
+
+const socials = Object.values(DATA.contact.social)
 
 export function Footer() {
   return (
-    <footer className="py-8 px-4 border-t border-border/50">
-      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <footer className="border-t border-border/60 px-4 py-8">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Koustav Singh. All rights reserved.
+          © {new Date().getFullYear()} {DATA.name}. All rights reserved.
         </p>
 
-        <div className="flex items-center gap-4">
-          <a
-            href="https://github.com/koustavx08"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 rounded-full bg-card-elevated shadow-neo-sm hover:shadow-neo hover:text-accent-blue transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            aria-label="GitHub"
-          >
-            <Github className="w-5 h-5" aria-hidden />
-          </a>
-          <a
-            href="https://linkedin.com/in/koustavx08"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 rounded-full bg-card-elevated shadow-neo-sm hover:shadow-neo hover:text-accent-blue transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            aria-label="LinkedIn"
-          >
-            <Linkedin className="w-5 h-5" aria-hidden />
-          </a>
-          <a
-            href="mailto:koustavsinghcollege@gmail.com"
-            className="p-2 rounded-full bg-card-elevated shadow-neo-sm hover:shadow-neo hover:text-accent-blue transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            aria-label="Email"
-          >
-            <Mail className="w-5 h-5" aria-hidden />
-          </a>
+        <div className="flex items-center gap-3">
+          {socials.map((social) => (
+            <a
+              key={social.name}
+              href={social.url}
+              target={social.url.startsWith("http") ? "_blank" : undefined}
+              rel={social.url.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="rounded-full p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              aria-label={social.name}
+            >
+              <social.icon className="size-4" aria-hidden />
+            </a>
+          ))}
         </div>
       </div>
     </footer>

@@ -2,31 +2,16 @@
 
 import type React from "react"
 import { useRef, useState } from "react"
-import { SectionHeader } from "./section-header"
-import { NeoCard } from "./neo-card"
-import { NeoButton } from "./neo-button"
 import { Phone, Mail, Linkedin, Github, Send, CheckCircle, Loader2 } from "lucide-react"
+import { SectionHeader } from "@/components/section-header"
+import { Button } from "@/components/ui/button"
+import { DATA } from "@/data/resume"
 
 const contactInfo = [
-  { icon: Phone, label: "Phone", value: "+91-7980072154", href: "tel:+917980072154" },
-  {
-    icon: Mail,
-    label: "Email",
-    value: "koustavsinghcollege@gmail.com",
-    href: "mailto:koustavsinghcollege@gmail.com",
-  },
-  {
-    icon: Linkedin,
-    label: "LinkedIn",
-    value: "linkedin.com/in/koustavx08",
-    href: "https://linkedin.com/in/koustavx08",
-  },
-  {
-    icon: Github,
-    label: "GitHub",
-    value: "github.com/koustavx08",
-    href: "https://github.com/koustavx08",
-  },
+  { icon: Phone, label: "Phone", value: DATA.contact.tel, href: `tel:${DATA.contact.tel.replace(/[^+\d]/g, "")}` },
+  { icon: Mail, label: "Email", value: DATA.contact.email, href: `mailto:${DATA.contact.email}` },
+  { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/koustavx08", href: DATA.contact.social.LinkedIn.url },
+  { icon: Github, label: "GitHub", value: "github.com/koustavx08", href: DATA.contact.social.GitHub.url },
 ]
 
 type FormErrors = {
@@ -65,7 +50,6 @@ export function ContactSection() {
 
   const handleChange = (field: keyof typeof formData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
-    // Clear error when user starts typing
     if (errors[field]) {
       setErrors((prev) => ({ ...prev, [field]: undefined }))
     }
@@ -82,7 +66,6 @@ export function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    // Validate all fields
     const newErrors: FormErrors = {
       name: validateField("name", formData.name),
       email: validateField("email", formData.email),
@@ -129,153 +112,146 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-24 px-4 bg-background/80">
-      <div className="max-w-4xl mx-auto flex flex-col items-center justify-center">
-        <SectionHeader title="Get In Touch" subtitle="Let's build something amazing together" />
+    <section id="contact" className="mx-auto max-w-3xl px-4 py-20">
+      <SectionHeader label="Contact" title="Get In Touch" subtitle="Let's build something together" />
 
-        <div className="w-full flex flex-col lg:flex-row gap-12 items-center justify-center mt-10">
-          {/* Contact Info */}
-          <div className="space-y-6 w-full max-w-md">
-            <h3 className="text-2xl font-semibold text-foreground mb-6 text-center">Contact Information</h3>
-            <div className="space-y-4">
-              {contactInfo.map((item, index) => (
-                <a
-                  key={index}
-                  href={item.href}
-                  target={item.href.startsWith("http") ? "_blank" : undefined}
-                  rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="flex items-center gap-4 p-4 rounded-xl bg-card-elevated shadow-neo-sm hover:shadow-neo transition-all duration-300 group focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                >
-                  <div className="p-3 rounded-xl bg-accent-blue/10 text-accent-blue group-hover:bg-accent-blue group-hover:text-background transition-colors">
-                    <item.icon className="w-5 h-5" aria-hidden />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">{item.label}</p>
-                    <p className="text-foreground font-medium">{item.value}</p>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <NeoCard className="p-8 w-full max-w-md mx-auto shadow-neo-lg">
-            {isSubmitted ? (
-              <div className="flex flex-col items-center justify-center h-full py-12 text-center" role="status" aria-live="polite">
-                <CheckCircle className="w-16 h-16 text-green-500 mb-4" aria-hidden />
-                <h3 className="text-2xl font-bold text-foreground mb-2">Message Sent!</h3>
-                <p className="text-muted-foreground">Thanks — I'll reply within 48 hours.</p>
-                <NeoButton variant="secondary" className="mt-6" onClick={() => setIsSubmitted(false)}>
-                  Send another message
-                </NeoButton>
+      <div className="grid gap-8 lg:grid-cols-2">
+        <div className="space-y-3">
+          {contactInfo.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              target={item.href.startsWith("http") ? "_blank" : undefined}
+              rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="flex items-center gap-3 rounded-xl border border-border bg-card p-4 transition-colors hover:bg-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              <div className="rounded-lg bg-primary/10 p-2.5 text-primary">
+                <item.icon className="size-4" aria-hidden />
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                    Name
-                  </label>
-                  <input
-                    ref={nameRef}
-                    type="text"
-                    id="name"
-                    name="name"
-                    autoComplete="name"
-                    value={formData.name}
-                    onChange={(e) => handleChange("name", e.target.value)}
-                    onBlur={() => handleBlur("name")}
-                    aria-invalid={!!errors.name}
-                    aria-describedby={errors.name ? "name-error" : undefined}
-                    className={`w-full px-4 py-3 rounded-xl bg-card shadow-neo-inset text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent-blue transition-all ${errors.name ? "ring-2 ring-destructive" : ""}`}
-                    placeholder="Your name"
-                  />
-                  {errors.name && (
-                    <p id="name-error" className="mt-2 text-sm text-destructive" role="alert">
-                      {errors.name}
-                    </p>
-                  )}
-                </div>
+              <div>
+                <p className="text-xs text-muted-foreground">{item.label}</p>
+                <p className="text-sm font-medium text-foreground">{item.value}</p>
+              </div>
+            </a>
+          ))}
+        </div>
 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                    Email
-                  </label>
-                  <input
-                    ref={emailRef}
-                    type="email"
-                    id="email"
-                    name="email"
-                    autoComplete="email"
-                    spellCheck={false}
-                    value={formData.email}
-                    onChange={(e) => handleChange("email", e.target.value)}
-                    onBlur={() => handleBlur("email")}
-                    aria-invalid={!!errors.email}
-                    aria-describedby={errors.email ? "email-error" : undefined}
-                    className={`w-full px-4 py-3 rounded-xl bg-card shadow-neo-inset text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent-blue transition-all ${errors.email ? "ring-2 ring-destructive" : ""}`}
-                    placeholder="your@email.com"
-                  />
-                  {errors.email && (
-                    <p id="email-error" className="mt-2 text-sm text-destructive" role="alert">
-                      {errors.email}
-                    </p>
-                  )}
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    ref={messageRef}
-                    id="message"
-                    name="message"
-                    autoComplete="off"
-                    rows={5}
-                    value={formData.message}
-                    onChange={(e) => handleChange("message", e.target.value)}
-                    onBlur={() => handleBlur("message")}
-                    aria-invalid={!!errors.message}
-                    aria-describedby={errors.message ? "message-error" : undefined}
-                    className={`w-full px-4 py-3 rounded-xl bg-card shadow-neo-inset text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent-blue transition-all resize-none ${errors.message ? "ring-2 ring-destructive" : ""}`}
-                    placeholder="Your message…"
-                  />
-                  {errors.message && (
-                    <p id="message-error" className="mt-2 text-sm text-destructive" role="alert">
-                      {errors.message}
-                    </p>
-                  )}
-                </div>
-
-                {submitError && (
-                  <div className="p-4 rounded-xl bg-destructive/10 text-destructive text-sm" role="alert">
-                    {submitError}
-                  </div>
+        <div className="rounded-xl border border-border bg-card p-6">
+          {isSubmitted ? (
+            <div className="flex h-full flex-col items-center justify-center py-8 text-center" role="status" aria-live="polite">
+              <CheckCircle className="mb-4 size-12 text-green-500" aria-hidden />
+              <h3 className="text-lg font-semibold text-foreground">Message Sent!</h3>
+              <p className="mt-1 text-sm text-muted-foreground">Thanks — I&apos;ll reply within 48 hours.</p>
+              <Button variant="outline" className="mt-6" onClick={() => setIsSubmitted(false)}>
+                Send another message
+              </Button>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+              <div>
+                <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-foreground">
+                  Name
+                </label>
+                <input
+                  ref={nameRef}
+                  type="text"
+                  id="name"
+                  name="name"
+                  autoComplete="name"
+                  value={formData.name}
+                  onChange={(e) => handleChange("name", e.target.value)}
+                  onBlur={() => handleBlur("name")}
+                  aria-invalid={!!errors.name}
+                  aria-describedby={errors.name ? "name-error" : undefined}
+                  className={`w-full rounded-md border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring ${errors.name ? "border-destructive" : "border-input"}`}
+                  placeholder="Your name"
+                />
+                {errors.name && (
+                  <p id="name-error" className="mt-1.5 text-xs text-destructive" role="alert">
+                    {errors.name}
+                  </p>
                 )}
+              </div>
 
-                <NeoButton type="submit" variant="primary" disabled={isSubmitting} className="w-full">
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" aria-hidden />
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-4 h-4" aria-hidden />
-                      Send Message
-                    </>
-                  )}
-                </NeoButton>
+              <div>
+                <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-foreground">
+                  Email
+                </label>
+                <input
+                  ref={emailRef}
+                  type="email"
+                  id="email"
+                  name="email"
+                  autoComplete="email"
+                  spellCheck={false}
+                  value={formData.email}
+                  onChange={(e) => handleChange("email", e.target.value)}
+                  onBlur={() => handleBlur("email")}
+                  aria-invalid={!!errors.email}
+                  aria-describedby={errors.email ? "email-error" : undefined}
+                  className={`w-full rounded-md border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring ${errors.email ? "border-destructive" : "border-input"}`}
+                  placeholder="your@email.com"
+                />
+                {errors.email && (
+                  <p id="email-error" className="mt-1.5 text-xs text-destructive" role="alert">
+                    {errors.email}
+                  </p>
+                )}
+              </div>
 
-                <p className="text-sm text-muted-foreground text-center">
-                  Or email me at{" "}
-                  <a href="mailto:koustavsinghcollege@gmail.com" className="text-accent-blue hover:underline">
-                    koustavsinghcollege@gmail.com
-                  </a>
-                </p>
-              </form>
-            )}
-          </NeoCard>
+              <div>
+                <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-foreground">
+                  Message
+                </label>
+                <textarea
+                  ref={messageRef}
+                  id="message"
+                  name="message"
+                  autoComplete="off"
+                  rows={5}
+                  value={formData.message}
+                  onChange={(e) => handleChange("message", e.target.value)}
+                  onBlur={() => handleBlur("message")}
+                  aria-invalid={!!errors.message}
+                  aria-describedby={errors.message ? "message-error" : undefined}
+                  className={`w-full resize-none rounded-md border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring ${errors.message ? "border-destructive" : "border-input"}`}
+                  placeholder="Your message…"
+                />
+                {errors.message && (
+                  <p id="message-error" className="mt-1.5 text-xs text-destructive" role="alert">
+                    {errors.message}
+                  </p>
+                )}
+              </div>
+
+              {submitError && (
+                <div className="rounded-md bg-destructive/10 p-3 text-sm text-destructive" role="alert">
+                  {submitError}
+                </div>
+              )}
+
+              <Button type="submit" disabled={isSubmitting} className="w-full">
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="size-4 animate-spin" aria-hidden />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send className="size-4" aria-hidden />
+                    Send Message
+                  </>
+                )}
+              </Button>
+
+              <p className="text-center text-xs text-muted-foreground">
+                Or email me at{" "}
+                <a href={`mailto:${DATA.contact.email}`} className="text-primary hover:underline">
+                  {DATA.contact.email}
+                </a>
+              </p>
+            </form>
+          )}
         </div>
       </div>
     </section>

@@ -1,76 +1,31 @@
-import { SectionHeader } from "./section-header"
-import { NeoCard } from "./neo-card"
-import { Code, Layout, Server, Database, Blocks, Brain, Wrench } from "lucide-react"
-import { BackgroundGradient } from "./ui/background-gradient"
-
-const skillCategories = [
-  {
-    title: "Full-Stack Development",
-    icon: Code,
-    skills: ["React.js", "Next.js 14", "TypeScript", "JavaScript", "HTML/CSS"],
-  },
-  {
-    title: "Backend Engineering",
-    icon: Server,
-    skills: ["Node.js", "Express.js", "REST APIs", "GraphQL", "MongoDB", "PostgreSQL"],
-  },
-  {
-    title: "Databases & Cloud",
-    icon: Database,
-    skills: ["MongoDB", "PostgreSQL", "Supabase", "Firebase", "Redis"],
-  },
-  {
-    title: "AI / Generative Tech",
-    icon: Brain,
-    skills: ["LLMs", "Groq API", "OpenAI", "Gemini API", "Prompt Engineering"],
-  },
-  {
-    title: "Web3 & Blockchain",
-    icon: Blocks,
-    skills: ["Smart Contracts", "Solidity", "Web3.js", "Ethers.js", "DApps", "MetaMask Integration"],
-  },
-  {
-    title: "Tools & Platforms",
-    icon: Wrench,
-    skills: ["Git", "GitHub", "Docker", "CI/CD", "Agile/Scrum", "Clerk Auth", "Stripe"],
-  },
-]
+import { SectionHeader } from "@/components/section-header"
+import { Badge } from "@/components/ui/badge"
+import { BlurFade } from "@/components/magicui/blur-fade"
+import { DATA } from "@/data/resume"
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="py-20 px-4 bg-card/30">
-      <div className="max-w-6xl mx-auto">
-        <SectionHeader title="Skills" subtitle="Technologies I work with" />
+    <section id="skills" className="mx-auto max-w-4xl px-4 py-20">
+      <SectionHeader label="Skills" title="Technologies" subtitle="What I work with" />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {skillCategories.map((category, index) => (
-            <BackgroundGradient
-              key={index}
-              className="rounded-2xl h-full"
-              containerClassName="rounded-2xl h-full"
-              animate={false}
-            >
-              <NeoCard className="p-6 h-full bg-card" hover>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-3 rounded-xl bg-accent-blue/10 text-accent-blue">
-                    <category.icon className="w-5 h-5" aria-hidden />
-                  </div>
-                  <h3 className="font-semibold text-foreground">{category.title}</h3>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill, skillIndex) => (
-                    <span
-                      key={skillIndex}
-                      className="px-3 py-1.5 text-xs rounded-full bg-card shadow-neo-inset text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </NeoCard>
-            </BackgroundGradient>
-          ))}
-        </div>
+      <div className="grid gap-4 sm:grid-cols-2">
+        {DATA.skills.map((category, index) => (
+          <BlurFade key={category.title} delay={0.05 * index}>
+            <div className="rounded-xl border border-border bg-card p-5">
+              <div className="mb-3 flex items-center gap-2">
+                <category.icon className="size-4 text-primary" aria-hidden />
+                <h3 className="font-medium text-foreground">{category.title}</h3>
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {category.skills.map((skill) => (
+                  <Badge key={skill} variant="secondary" className="font-normal">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+          </BlurFade>
+        ))}
       </div>
     </section>
   )
