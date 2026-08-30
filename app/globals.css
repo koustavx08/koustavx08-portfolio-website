@@ -139,6 +139,15 @@
   .bg-surface-70 {
     background-color: oklch(0.15 0.01 260 / 0.7);
   }
+
+  /* Hides scrollbars while keeping the element scrollable */
+  .no-visible-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-visible-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Added ripple animation keyframes */
