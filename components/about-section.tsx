@@ -38,7 +38,7 @@ export function AboutSection() {
                 className="flex items-center gap-2 px-4 py-3 rounded-full bg-card-elevated shadow-neo-sm hover:shadow-neo transition-all duration-300 hover:-translate-y-0.5"
               >
                 <Zap className="w-4 h-4 text-accent-blue" />
-                <span className="text-sm text-frontend">APIs & Backend</span>
+                <span className="text-sm text-foreground">APIs & Backend</span>
               </div>
               <div
                 key={3}

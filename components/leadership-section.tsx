@@ -97,9 +97,11 @@ export function LeadershipSection() {
             >
               <NeoCard className="p-6 h-full bg-card" hover>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="p-3 rounded-xl bg-accent-blue/10 text-accent-blue">
-                    {item.icon && <item.icon className="w-6 h-6" />}
-                  </div>
+                  {item.icon && (
+                    <div className="p-3 rounded-xl bg-accent-blue/10 text-accent-blue">
+                      <item.icon className="w-6 h-6" />
+                    </div>
+                  )}
                   <div>
                     <h3 className="font-bold text-foreground">{item.title}</h3>
                     {item.date && <p className="text-sm text-accent-blue">{item.date}</p>}
@@ -122,12 +124,6 @@ export function LeadershipSection() {
                       </span>
                     ))}
                   </div>
-                )}
-
-                {!item.description && item.date && (
-                  <p className="text-muted-foreground text-xs mb-4">
-                    {item.date}
-                  </p>
                 )}
               </NeoCard>
             </BackgroundGradient>
