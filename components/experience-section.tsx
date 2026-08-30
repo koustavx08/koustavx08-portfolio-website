@@ -56,6 +56,7 @@ const timelineData: ExperienceEntry[] = [
       <BackgroundGradient className="rounded-2xl" containerClassName="rounded-2xl">
         <NeoCard className="p-6 bg-card" hover>
           <h3 className="text-xl font-bold text-foreground mb-1">SDE - Software Development Engineer</h3>
+          <h4 className="text-lg font-semibold text-accent-blue mb-3">Dol Tech Labs</h4>
           <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
             <span className="flex items-center gap-1">
               <MapPin className="w-4 h-4" aria-hidden />
@@ -103,6 +104,7 @@ const timelineData: ExperienceEntry[] = [
       <BackgroundGradient className="rounded-2xl" containerClassName="rounded-2xl">
         <NeoCard className="p-6 bg-card" hover>
           <h3 className="text-xl font-bold text-foreground mb-1">Technical Co Head</h3>
+          <h4 className="text-lg font-semibold text-accent-blue mb-3">Samarth TMSL</h4>
           <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
             <span className="flex items-center gap-1">
               <MapPin className="w-4 h-4" aria-hidden />
@@ -270,6 +272,7 @@ const timelineData: ExperienceEntry[] = [
       <BackgroundGradient className="rounded-2xl" containerClassName="rounded-2xl">
         <NeoCard className="p-6 bg-card" hover>
           <h3 className="text-xl font-bold text-foreground mb-1">Web Developer</h3>
+          <h4 className="text-lg font-semibold text-accent-blue mb-3">Samarth TMSL</h4>
           <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
             <span className="flex items-center gap-1">
               <MapPin className="w-4 h-4" aria-hidden />
