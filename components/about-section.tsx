@@ -30,28 +30,28 @@ export function AboutSection() {
                 key={1}
                 className="flex items-center gap-2 px-4 py-3 rounded-full bg-card-elevated shadow-neo-sm hover:shadow-neo transition-all duration-300 hover:-translate-y-0.5"
               >
-                <Code2 className="w-4 h-4 text-accent-blue" />
+                <Code2 className="w-4 h-4 text-accent-blue" aria-hidden />
                 <span className="text-sm text-foreground">Full-Stack Development</span>
               </div>
               <div
                 key={2}
                 className="flex items-center gap-2 px-4 py-3 rounded-full bg-card-elevated shadow-neo-sm hover:shadow-neo transition-all duration-300 hover:-translate-y-0.5"
               >
-                <Zap className="w-4 h-4 text-accent-blue" />
+                <Zap className="w-4 h-4 text-accent-blue" aria-hidden />
                 <span className="text-sm text-foreground">APIs & Backend</span>
               </div>
               <div
                 key={3}
                 className="flex items-center gap-2 px-4 py-3 rounded-full bg-card-elevated shadow-neo-sm hover:shadow-neo transition-all duration-300 hover:-translate-y-0.5"
               >
-                <Rocket className="w-4 h-4 text-accent-blue" />
+                <Rocket className="w-4 h-4 text-accent-blue" aria-hidden />
                 <span className="text-sm text-foreground">AI & Generative Tech</span>
               </div>
               <div
                 key={4}
                 className="flex items-center gap-2 px-4 py-3 rounded-full bg-card-elevated shadow-neo-sm hover:shadow-neo transition-all duration-300 hover:-translate-y-0.5"
               >
-                <Users className="w-4 h-4 text-accent-blue" />
+                <Users className="w-4 h-4 text-accent-blue" aria-hidden />
                 <span className="text-sm text-foreground">Developer Communities</span>
               </div>
             </div>

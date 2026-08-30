@@ -99,7 +99,7 @@ export function LeadershipSection() {
                 <div className="flex items-center gap-3 mb-4">
                   {item.icon && (
                     <div className="p-3 rounded-xl bg-accent-blue/10 text-accent-blue">
-                      <item.icon className="w-6 h-6" />
+                      <item.icon className="w-6 h-6" aria-hidden />
                     </div>
                   )}
                   <div>

@@ -1,11 +1,11 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { SectionHeader } from "./section-header"
 import { NeoCard } from "./neo-card"
 import { NeoButton } from "./neo-button"
-import { Phone, Mail, Linkedin, Github, Globe, Send, CheckCircle, Loader2 } from "lucide-react"
+import { Phone, Mail, Linkedin, Github, Send, CheckCircle, Loader2 } from "lucide-react"
 
 const contactInfo = [
   { icon: Phone, label: "Phone", value: "+91-7980072154", href: "tel:+917980072154" },
@@ -41,6 +41,9 @@ export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
+  const nameRef = useRef<HTMLInputElement>(null)
+  const emailRef = useRef<HTMLInputElement>(null)
+  const messageRef = useRef<HTMLTextAreaElement>(null)
 
   const validateField = (field: keyof typeof formData, value: string): string | undefined => {
     switch (field) {
@@ -88,7 +91,16 @@ export function ContactSection() {
 
     setErrors(newErrors)
 
-    if (Object.values(newErrors).some((error) => error)) {
+    if (newErrors.name) {
+      nameRef.current?.focus()
+      return
+    }
+    if (newErrors.email) {
+      emailRef.current?.focus()
+      return
+    }
+    if (newErrors.message) {
+      messageRef.current?.focus()
       return
     }
 
@@ -149,7 +161,7 @@ export function ContactSection() {
           {/* Contact Form */}
           <NeoCard className="p-8 w-full max-w-md mx-auto shadow-neo-lg">
             {isSubmitted ? (
-              <div className="flex flex-col items-center justify-center h-full py-12 text-center">
+              <div className="flex flex-col items-center justify-center h-full py-12 text-center" role="status" aria-live="polite">
                 <CheckCircle className="w-16 h-16 text-green-500 mb-4" aria-hidden />
                 <h3 className="text-2xl font-bold text-foreground mb-2">Message Sent!</h3>
                 <p className="text-muted-foreground">Thanks — I'll reply within 48 hours.</p>
@@ -164,8 +176,11 @@ export function ContactSection() {
                     Name
                   </label>
                   <input
+                    ref={nameRef}
                     type="text"
                     id="name"
+                    name="name"
+                    autoComplete="name"
                     value={formData.name}
                     onChange={(e) => handleChange("name", e.target.value)}
                     onBlur={() => handleBlur("name")}
@@ -186,8 +201,12 @@ export function ContactSection() {
                     Email
                   </label>
                   <input
+                    ref={emailRef}
                     type="email"
                     id="email"
+                    name="email"
+                    autoComplete="email"
+                    spellCheck={false}
                     value={formData.email}
                     onChange={(e) => handleChange("email", e.target.value)}
                     onBlur={() => handleBlur("email")}
@@ -208,7 +227,10 @@ export function ContactSection() {
                     Message
                   </label>
                   <textarea
+                    ref={messageRef}
                     id="message"
+                    name="message"
+                    autoComplete="off"
                     rows={5}
                     value={formData.message}
                     onChange={(e) => handleChange("message", e.target.value)}
@@ -216,7 +238,7 @@ export function ContactSection() {
                     aria-invalid={!!errors.message}
                     aria-describedby={errors.message ? "message-error" : undefined}
                     className={`w-full px-4 py-3 rounded-xl bg-card shadow-neo-inset text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent-blue transition-all resize-none ${errors.message ? "ring-2 ring-destructive" : ""}`}
-                    placeholder="Your message..."
+                    placeholder="Your message…"
                   />
                   {errors.message && (
                     <p id="message-error" className="mt-2 text-sm text-destructive" role="alert">

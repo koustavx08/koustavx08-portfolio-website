@@ -42,14 +42,6 @@ const FloatingDockMobile = ({
   const [open, setOpen] = useState(false)
   const shouldReduceMotion = useReducedMotion()
 
-  const handleClick = (href: string) => {
-    setOpen(false)
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
-  }
-
   return (
     <div className={cn("relative block md:hidden", className)}>
       <AnimatePresence>
@@ -67,13 +59,14 @@ const FloatingDockMobile = ({
                 }}
                 transition={{ delay: (items.length - 1 - idx) * 0.05 }}
               >
-                <button
-                  onClick={() => handleClick(item.href)}
+                <a
+                  href={item.href}
+                  onClick={() => setOpen(false)}
                   className="flex h-12 w-12 items-center justify-center rounded-full bg-card-elevated shadow-neo-sm transition-all duration-200 hover:shadow-neo hover:shadow-accent-blue/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue"
                   aria-label={item.title}
                 >
-                  <div className="h-5 w-5 text-muted-foreground">{item.icon}</div>
-                </button>
+                  <div className="h-5 w-5 text-muted-foreground" aria-hidden="true">{item.icon}</div>
+                </a>
               </motion.div>
             ))}
           </motion.div>
@@ -85,7 +78,7 @@ const FloatingDockMobile = ({
         aria-expanded={open}
         aria-label={open ? "Close navigation" : "Open navigation"}
       >
-        <Menu className="h-5 w-5 text-muted-foreground" />
+        <Menu className="h-5 w-5 text-muted-foreground" aria-hidden />
       </button>
     </div>
   )
@@ -149,21 +142,15 @@ function IconContainer({
 
   const [hovered, setHovered] = useState(false)
 
-  const handleClick = () => {
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
-  }
-
   // If reduced motion, use static sizes
   const staticStyle = shouldReduceMotion ? { width: 48, height: 48 } : { width, height }
 
   const staticIconStyle = shouldReduceMotion ? { width: 24, height: 24 } : { width: widthIcon, height: heightIcon }
 
   return (
-    <button
-      onClick={handleClick}
+    <a
+      href={href}
+      aria-label={title}
       className="focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue rounded-full"
     >
       <motion.div
@@ -180,15 +167,20 @@ function IconContainer({
               animate={{ opacity: 1, y: 0, x: "-50%" }}
               exit={{ opacity: 0, y: 2, x: "-50%" }}
               className="absolute -top-9 left-1/2 w-fit rounded-lg border border-border bg-card px-3 py-1.5 text-xs whitespace-pre text-foreground shadow-neo-sm"
+              aria-hidden="true"
             >
               {title}
             </motion.div>
           )}
         </AnimatePresence>
-        <motion.div style={staticIconStyle} className="flex items-center justify-center text-muted-foreground">
+        <motion.div
+          style={staticIconStyle}
+          className="flex items-center justify-center text-muted-foreground"
+          aria-hidden="true"
+        >
           {icon}
         </motion.div>
       </motion.div>
-    </button>
+    </a>
   )
 }

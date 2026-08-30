@@ -58,29 +58,33 @@ const timelineData: ExperienceEntry[] = [
           <h3 className="text-xl font-bold text-foreground mb-1">SDE - Software Development Engineer</h3>
           <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
             <span className="flex items-center gap-1">
-              <MapPin className="w-4 h-4" />
+              <MapPin className="w-4 h-4" aria-hidden />
               Kolkata, India
+            </span>
+            <span className="flex items-center gap-1">
+              <Calendar className="w-4 h-4" aria-hidden />
+              Jun 2026 – Present
             </span>
           </div>
           <ul className="space-y-2">
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Contributing to scalable software solutions and developer-focused products
             </li>
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Collaborating on application development and system design
             </li>
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Technical problem solving and product discussions
             </li>
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Feature implementation, testing and deployment workflows
             </li>
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Engineering best practices and modern development tools
             </li>
           </ul>
@@ -101,29 +105,29 @@ const timelineData: ExperienceEntry[] = [
           <h3 className="text-xl font-bold text-foreground mb-1">Technical Co Head</h3>
           <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
             <span className="flex items-center gap-1">
-              <MapPin className="w-4 h-4" />
+              <MapPin className="w-4 h-4" aria-hidden />
               Kolkata, India
             </span>
             <span className="flex items-center gap-1">
-              <Calendar className="w-4 h-4" />
+              <Calendar className="w-4 h-4" aria-hidden />
               Jun 2026 – Present
             </span>
           </div>
           <ul className="space-y-2">
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Leading technical initiatives and overseeing development of student-focused platforms
             </li>
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Mentoring the web development team and driving technical projects
             </li>
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Collaborating with cross-functional teams and delivering scalable solutions
             </li>
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Streamlining development workflows and supporting community events through technology
             </li>
           </ul>
@@ -145,29 +149,29 @@ const timelineData: ExperienceEntry[] = [
           <h4 className="text-lg font-semibold text-accent-blue mb-3">Modelsuite.ai</h4>
           <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
             <span className="flex items-center gap-1">
-              <MapPin className="w-4 h-4" />
+              <MapPin className="w-4 h-4" aria-hidden />
               Rüsselsheim, Germany (Remote)
             </span>
             <span className="flex items-center gap-1">
-              <Calendar className="w-4 h-4" />
+              <Calendar className="w-4 h-4" aria-hidden />
               Jun 2025 – Oct 2025
             </span>
           </div>
           <ul className="space-y-2">
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Built AI-driven SaaS features using React, Node.js, and MongoDB, reducing delivery time by 20%
             </li>
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Architected and optimized RESTful APIs and microservices, improving responsiveness by 15%
             </li>
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Implemented scalable database schemas supporting 10,000+ concurrent users
             </li>
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Collaborated in Agile sprints with cross-functional teams, shipping production features weekly
             </li>
           </ul>
@@ -189,25 +193,25 @@ const timelineData: ExperienceEntry[] = [
           <h4 className="text-lg font-semibold text-accent-blue mb-3">AI Wallah</h4>
           <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
             <span className="flex items-center gap-1">
-              <MapPin className="w-4 h-4" />
+              <MapPin className="w-4 h-4" aria-hidden />
               Kolkata, India
             </span>
             <span className="flex items-center gap-1">
-              <Calendar className="w-4 h-4" />
+              <Calendar className="w-4 h-4" aria-hidden />
               Jun 2025 – Jul 2025
             </span>
           </div>
           <ul className="space-y-2">
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Designed and fine-tuned LLM models for domain-specific tasks, improving accuracy by 25%
             </li>
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Integrated AI workflows using Groq API and OpenAI, processing 10K+ automated requests/day
             </li>
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Developed proof-of-concept AI prototypes adopted in 3 production applications
             </li>
           </ul>
@@ -229,25 +233,25 @@ const timelineData: ExperienceEntry[] = [
           <h4 className="text-lg font-semibold text-accent-blue mb-3">SaaSForge</h4>
           <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
             <span className="flex items-center gap-1">
-              <MapPin className="w-4 h-4" />
+              <MapPin className="w-4 h-4" aria-hidden />
               Delhi, India
             </span>
             <span className="flex items-center gap-1">
-              <Calendar className="w-4 h-4" />
+              <Calendar className="w-4 h-4" aria-hidden />
               Feb 2025 – Mar 2025
             </span>
           </div>
           <ul className="space-y-2">
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Designed RESTful APIs serving 50K+ daily requests with 99.5% service uptime
             </li>
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Optimized PostgreSQL queries and indexing, reducing query execution time by 40%
             </li>
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Implemented Redis-based caching, decreasing API response latency by 30%
             </li>
           </ul>
@@ -268,29 +272,29 @@ const timelineData: ExperienceEntry[] = [
           <h3 className="text-xl font-bold text-foreground mb-1">Web Developer</h3>
           <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
             <span className="flex items-center gap-1">
-              <MapPin className="w-4 h-4" />
+              <MapPin className="w-4 h-4" aria-hidden />
               Kolkata, India
             </span>
             <span className="flex items-center gap-1">
-              <Calendar className="w-4 h-4" />
+              <Calendar className="w-4 h-4" aria-hidden />
               Nov 2024 – May 2026
             </span>
           </div>
           <ul className="space-y-2">
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Engineered full-stack student platforms using the MERN stack, serving 500+ active users
             </li>
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Developed secure authentication using Clerk and Firebase, achieving 99.9% uptime
             </li>
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Built admin dashboards with analytics, reducing manual operational workload by 60%
             </li>
             <li className="flex items-start gap-2 text-muted-foreground">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan mt-2 shrink-0" aria-hidden />
               Optimized performance and accessibility (WCAG 2.1 AA), increasing user adoption by 40%
             </li>
           </ul>

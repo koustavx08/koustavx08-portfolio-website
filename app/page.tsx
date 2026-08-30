@@ -15,7 +15,7 @@ import { AchievementsSection } from "@/components/achievement-timeline"
 
 export default function Home() {
   return (
-    <main className="min-h-screen relative z-10">
+    <main id="main-content" className="min-h-screen relative z-10">
       <HeroSection />
       <AboutSection />
       <SkillsSection />

@@ -53,7 +53,7 @@ export function SkillsSection() {
               <NeoCard className="p-6 h-full bg-card" hover>
                 <div className="flex items-center gap-3 mb-4">
                   <div className="p-3 rounded-xl bg-accent-blue/10 text-accent-blue">
-                    <category.icon className="w-5 h-5" />
+                    <category.icon className="w-5 h-5" aria-hidden />
                   </div>
                   <h3 className="font-semibold text-foreground">{category.title}</h3>
                 </div>

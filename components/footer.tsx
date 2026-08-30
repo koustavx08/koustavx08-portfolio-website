@@ -13,26 +13,26 @@ export function Footer() {
             href="https://github.com/koustavx08"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full bg-card-elevated shadow-neo-sm hover:shadow-neo hover:text-accent-blue transition-all"
+            className="p-2 rounded-full bg-card-elevated shadow-neo-sm hover:shadow-neo hover:text-accent-blue transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             aria-label="GitHub"
           >
-            <Github className="w-5 h-5" />
+            <Github className="w-5 h-5" aria-hidden />
           </a>
           <a
             href="https://linkedin.com/in/koustavx08"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full bg-card-elevated shadow-neo-sm hover:shadow-neo hover:text-accent-blue transition-all"
+            className="p-2 rounded-full bg-card-elevated shadow-neo-sm hover:shadow-neo hover:text-accent-blue transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             aria-label="LinkedIn"
           >
-            <Linkedin className="w-5 h-5" />
+            <Linkedin className="w-5 h-5" aria-hidden />
           </a>
           <a
             href="mailto:koustavsinghcollege@gmail.com"
-            className="p-2 rounded-full bg-card-elevated shadow-neo-sm hover:shadow-neo hover:text-accent-blue transition-all"
+            className="p-2 rounded-full bg-card-elevated shadow-neo-sm hover:shadow-neo hover:text-accent-blue transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             aria-label="Email"
           >
-            <Mail className="w-5 h-5" />
+            <Mail className="w-5 h-5" aria-hidden />
           </a>
         </div>
       </div>

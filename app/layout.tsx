@@ -4,7 +4,6 @@ import { MantineProvider } from "@mantine/core"
 import type { Metadata, Viewport } from "next"
 import { Inter, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
-import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
@@ -44,7 +43,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${inter.variable} ${geistMono.variable} font-sans antialiased`}>
-        {/* Ripple effect removed from global layout. Now only in hero section. */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-accent-blue focus:text-background focus:font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-blue focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        >
+          Skip to main content
+        </a>
         <MantineProvider theme={{ primaryColor: 'blue' }}>
           <div className="relative z-10">{children}</div>
         </MantineProvider>

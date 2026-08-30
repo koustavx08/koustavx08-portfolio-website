@@ -18,7 +18,7 @@ export function HeroSection() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
       {/* Ripple Background Effect for Hero Only */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0" aria-hidden="true">
         <BackgroundRippleEffect rows={30} cols={50} cellSize={56} />
       </div>
       {/* Other Background Elements */}
@@ -36,6 +36,8 @@ export function HeroSection() {
                   <img
                     src="/profile-pixelated.png"
                     alt="Koustav Singh profile"
+                    width={128}
+                    height={128}
                     className="w-full h-full object-cover rounded-full" style={{ imageRendering: 'pixelated' }}
                     onError={e => { e.currentTarget.style.display = 'none'; (e.currentTarget.nextElementSibling as HTMLElement).style.display = 'flex'; }}
                   />
@@ -95,7 +97,7 @@ export function HeroSection() {
 
       {/* Cool Scroll Indicator - centered and lower in hero */}
       <div className="pointer-events-none absolute left-1/2 z-40 flex flex-col items-center" style={{ bottom: 'clamp(32px, 8vw, 64px)', transform: 'translateX(-50%)' }}>
-        <div className="relative flex flex-col items-center">
+        <div className="relative flex flex-col items-center" aria-hidden="true">
           <div className="w-12 h-12 rounded-full bg-linear-to-br from-accent-blue/60 to-accent-cyan/60 blur-sm opacity-60 animate-pulse absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
           <div className="w-8 h-14 rounded-full border-2 border-accent-blue/40 bg-background/80 flex items-start justify-center p-2 shadow-neo-blue-lg relative animate-bounce">
             <div className="w-1.5 h-4 rounded-full bg-accent-blue animate-pulse mt-1" />
