@@ -1,7 +1,8 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { Resend } from "resend"
+import { DATA } from "@/data/resume"
 
-const CONTACT_RECEIVER = "koustavsinghcollege@gmail.com"
+const CONTACT_RECEIVER = DATA.contact.email
 
 export async function POST(request: NextRequest) {
   try {
