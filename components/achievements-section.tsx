@@ -1,5 +1,5 @@
 import { SectionHeader } from "@/components/section-header"
-import { Timeline, TimelineItem } from "@/components/timeline"
+import { Badge } from "@/components/ui/badge"
 import { BlurFade } from "@/components/magicui/blur-fade"
 import { DATA } from "@/data/resume"
 
@@ -8,22 +8,33 @@ const sortedAchievements = [...DATA.achievements].sort((a, b) => (a.sortDate < b
 export function AchievementsSection() {
   return (
     <section id="achievements" className="border-t border-border/60 bg-card/30 px-4 py-20">
-      <div className="mx-auto max-w-2xl">
-        <SectionHeader label="Achievements" title="Achievements & Hackathons" subtitle="Selected wins & milestones" />
+      <div className="mx-auto max-w-3xl">
+        <SectionHeader
+          label="Achievements"
+          title="Achievements & Hackathons"
+          subtitle="Selected wins & milestones"
+        />
 
         <BlurFade>
-          <Timeline>
+          <div className="space-y-4">
             {sortedAchievements.map((item, index) => (
-              <TimelineItem key={item.title} isLast={index === sortedAchievements.length - 1}>
-                <div className="flex items-baseline justify-between gap-2">
-                  <h3 className="font-semibold text-foreground">{item.title}</h3>
-                  <span className="shrink-0 text-xs text-muted-foreground">{item.date}</span>
+              <article
+                key={item.title}
+                className="group relative rounded-xl border border-border/50 bg-card p-5 transition-all hover:border-border hover:shadow-neo-sm"
+              >
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <h3 className="font-semibold text-foreground truncate">{item.title}</h3>
+                      <span className="shrink-0 text-xs text-muted-foreground">{item.date}</span>
+                    </div>
+                    <p className="text-sm text-primary font-medium">{item.subtitle}</p>
+                  </div>
                 </div>
-                <p className="text-sm text-primary">{item.subtitle}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{item.description}</p>
-              </TimelineItem>
+                <p className="text-sm text-muted-foreground/80 leading-relaxed">{item.description}</p>
+              </article>
             ))}
-          </Timeline>
+          </div>
         </BlurFade>
       </div>
     </section>
