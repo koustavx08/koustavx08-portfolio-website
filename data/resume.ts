@@ -334,6 +334,14 @@ export const DATA = {
 
   achievements: [
     {
+      title: "HexaFalls S2: 1st Runner Up",
+      subtitle: "Best Use of Gemini API · 1st Runner Up, Actian Challenge Track",
+      date: "Aug 2026",
+      sortDate: "2026-08",
+      description:
+        "Built a full-stack application in 45 hours leveraging Gemini API for intelligent features. Secured dual recognition: 1st Runner Up overall and Best Use of Gemini API, plus 1st Runner Up in Actian Challenge Track.",
+    },
+    {
       title: "Open Odyssey: Winner",
       subtitle: "1st Place, Full-Stack Web3 · 120 teams",
       date: "Nov 2024",
