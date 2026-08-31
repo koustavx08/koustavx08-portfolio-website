@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next"
 import { Inter, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
-import { Navbar } from "@/components/navbar"
+import { FloatingDockNav } from "@/components/floating-dock-nav"
 import { DATA } from "@/data/resume"
 import "./globals.css"
 
@@ -67,7 +67,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <Navbar />
+          <FloatingDockNav />
           {children}
         </ThemeProvider>
         <Analytics />
