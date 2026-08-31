@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Linkedin } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
@@ -10,6 +10,7 @@ type Testimonial = {
   name: string;
   designation: string;
   src: string;
+  linkedin?: string;
 };
 
 export const AnimatedTestimonials = ({
@@ -98,6 +99,18 @@ export const AnimatedTestimonials = ({
               <p className="text-sm text-muted-foreground">
                 {testimonials[active].designation}
               </p>
+              {testimonials[active].linkedin && (
+                <a
+                  href={testimonials[active].linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-flex items-center gap-1 text-xs text-primary hover:underline transition-colors"
+                  aria-label={`View ${testimonials[active].name}'s LinkedIn profile`}
+                >
+                  <Linkedin className="h-3 w-3" aria-hidden />
+                  LinkedIn
+                </a>
+              )}
               <motion.p className="mt-6 text-base text-muted-foreground/90 leading-relaxed">
                 {testimonials[active].quote.split(" ").map((word, i) => (
                   <motion.span

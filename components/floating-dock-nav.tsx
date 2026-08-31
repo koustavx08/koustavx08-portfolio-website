@@ -11,6 +11,7 @@ import {
   Trophy,
   GraduationCap,
   Mail,
+  MessageSquare,
 } from "lucide-react";
 import { DATA } from "@/data/resume";
 
@@ -22,6 +23,7 @@ const navItems = DATA.navbar.map((item) => {
     "#projects": <FolderKanban className="h-full w-full" />,
     "#skills": <Code className="h-full w-full" />,
     "#leadership": <Users className="h-full w-full" />,
+    "#testimonials": <MessageSquare className="h-full w-full" />,
     "#achievements": <Trophy className="h-full w-full" />,
     "#education": <GraduationCap className="h-full w-full" />,
     "#contact": <Mail className="h-full w-full" />,

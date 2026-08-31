@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Globe } from "lucide-react"
+import { Github, Linkedin, Mail, Globe, Instagram } from "lucide-react"
 import { Code, Server, Database, Brain, Blocks, Wrench } from "lucide-react"
 import type {
   NavItem,
@@ -29,6 +29,7 @@ export const DATA = {
     { href: "#projects", label: "Projects" },
     { href: "#skills", label: "Skills" },
     { href: "#leadership", label: "Leadership" },
+    { href: "#testimonials", label: "Testimonials" },
     { href: "#education", label: "Education" },
     { href: "#achievements", label: "Achievements" },
     { href: "#contact", label: "Contact" },
@@ -54,6 +55,12 @@ export const DATA = {
         name: "Email",
         url: "mailto:koustavsinghcollege@gmail.com",
         icon: Mail,
+        navbar: true,
+      },
+      Instagram: {
+        name: "Instagram",
+        url: "https://instagram.com/koustavx08",
+        icon: Instagram,
         navbar: true,
       },
     } satisfies Record<string, SocialLink>,
