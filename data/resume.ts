@@ -192,35 +192,19 @@ export const DATA = {
       ],
     },
     {
-      title: "trace-x",
-      description: "AI-powered debugging and tracing platform for distributed systems with real-time observability.",
-      technologies: ["TypeScript", "Next.js", "Python", "PostgreSQL"],
-      links: [
-        { type: "Source", href: "https://github.com/koustavx08/trace-x", icon: Github },
-      ],
-    },
-    {
       title: "autolayout.ai",
-      description: "AI-powered design automation tool that generates responsive layouts from natural language prompts.",
-      technologies: ["TypeScript", "Next.js", "Gemini API", "Tailwind CSS"],
+      description: "React Native app that converts hand-drawn UI wireframes to working React Native code using on-device TFLite object detection (EfficientDet-Lite0), with optional Gemini-powered design enhancement via RAG.",
+      technologies: ["TypeScript", "React Native", "Expo", "TFLite", "Gemini API", "Express", "MongoDB", "Actian VectorAI"],
       links: [
         { type: "Source", href: "https://github.com/casualGamer-dev/autolayout.ai", icon: Github },
-        { type: "Website", href: "https://drive.google.com/drive/folders/14tjteouI98n2k5p34VqaihSA0F56VSsp?usp=drive_link", icon: Globe },
-      ],
-    },
-    {
-      title: "recoverai",
-      description: "AI-powered disaster recovery planning platform with automated backup orchestration and compliance reporting.",
-      technologies: ["TypeScript", "Next.js", "Python", "AWS"],
-      links: [
-        { type: "Source", href: "https://github.com/koustavx08/recoverai", icon: Github },
       ],
     },
     {
       title: "claimr",
-      description: "Automated insurance claim processing platform with AI-powered document analysis and fraud detection.",
-      technologies: ["TypeScript", "Next.js", "Python", "PostgreSQL"],
+      description: "Centralized claim management platform (Claimrbro) with claim creation, status tracking, authentication, and responsive UI. Forked and extended from kekubhai/claimr.",
+      technologies: ["TypeScript", "React", "Node.js", "PostgreSQL", "JWT"],
       links: [
+        { type: "Website", href: "https://claimr-chi.vercel.app", icon: Globe },
         { type: "Source", href: "https://github.com/koustavx08/claimr", icon: Github },
       ],
     },
