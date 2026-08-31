@@ -201,12 +201,12 @@ export const DATA = {
       ],
     },
     {
-      title: "chat-app",
-      description: "Full-stack chat & messaging application built with Socket.IO and MongoDB.",
-      technologies: ["TypeScript", "React", "Node.js", "Socket.IO"],
+      title: "autolayout.ai",
+      description: "AI-powered design automation tool that generates responsive layouts from natural language prompts.",
+      technologies: ["TypeScript", "Next.js", "Gemini API", "Tailwind CSS"],
       links: [
-        { type: "Website", href: "https://chat-app-x08.vercel.app/", icon: Globe },
-        { type: "Source", href: "https://github.com/koustavx08/chat-app", icon: Github },
+        { type: "Source", href: "https://github.com/casualGamer-dev/autolayout.ai", icon: Github },
+        { type: "Website", href: "https://drive.google.com/drive/folders/14tjteouI98n2k5p34VqaihSA0F56VSsp?usp=drive_link", icon: Globe },
       ],
     },
     {
@@ -219,12 +219,11 @@ export const DATA = {
       ],
     },
     {
-      title: "web3-todo-dapp",
-      description: "Decentralized task management dApp with NFT rewards and streak tracking.",
-      technologies: ["TypeScript", "React", "Solidity", "Avalanche (Fuji)"],
+      title: "claimr",
+      description: "Automated insurance claim processing platform with AI-powered document analysis and fraud detection.",
+      technologies: ["TypeScript", "Next.js", "Python", "PostgreSQL"],
       links: [
-        { type: "Website", href: "https://web3-todo-dapp-alpha.vercel.app/", icon: Globe },
-        { type: "Source", href: "https://github.com/koustavx08/web3-todo-dapp", icon: Github },
+        { type: "Source", href: "https://github.com/koustavx08/claimr", icon: Github },
       ],
     },
   ] satisfies Project[],
