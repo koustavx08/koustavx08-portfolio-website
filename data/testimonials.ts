@@ -11,10 +11,10 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "I had the pleasure of teaching Koustav during his time at K.E. Carmel School, Amtala and I can confidently say he is one of the most talented and enjoyable students I've encountered in my years as a computer science educator. What immediately stands out about Koustav is his exceptional coding abilities. Throughout our coursework, he consistently delivered clean, efficient, and well-documented code that demonstrated not only a strong grasp of programming fundamentals but also an intuitive understanding of software design principles. Beyond his technical excellence, Koustav brought an infectious positive energy to every class session. His jovial personality and natural ability to lighten the mood made him a joy to teach, even during the most challenging programming concepts or debugging sessions. He has that rare quality of maintaining enthusiasm while helping others stay motivated and engaged with the material.",
+      "Koustav is one of the most talented students I've taught in my 8+ years as a CS educator. He consistently delivered clean, efficient, well-documented code with an intuitive grasp of software design. Beyond technical excellence, his infectious energy and ability to lighten the mood made him a joy to teach — even during the toughest debugging sessions.",
     name: "Seemanta Bhowmick",
     designation: "Experienced Computer & Robotics Educator | HoD | 8+ Years | ICSE & ISC Examiner",
-    src: "https://api.dicebear.com/7.x/avataaars/svg?seed=seemanta",
+    src: "https://media.licdn.com/dms/image/v2/D4D35AQHWGpQIfvXtcg/profile-framedphoto-shrink_800_800/B4DZzCHgoSH4Ak-/0/1772783274838?e=1788807600&v=beta&t=73OYvtZqIdGQF3lB3tSIyyBLMgiVOKNXiQs5sbHGn6g",
     linkedin: "https://linkedin.com/in/seemanta-bhowmick",
   },
 ]
