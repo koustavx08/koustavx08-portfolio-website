@@ -20,8 +20,13 @@ export const metadata: Metadata = {
   keywords: ["Full-Stack Developer", "MERN", "Web3", "React", "Next.js", "TypeScript", "Solidity", "AI"],
   authors: [{ name: DATA.name }],
   icons: {
-    icon: "/icon.svg",
-    apple: "/icon.svg",
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/icon-light-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon.svg", sizes: "any", type: "image/svg+xml" },
+    ],
+    shortcut: "/icon-light-32x32.png",
+    apple: "/apple-icon.png",
   },
   openGraph: {
     title: `${DATA.name} | ${DATA.headline}`,

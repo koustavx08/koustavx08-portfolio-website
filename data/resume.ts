@@ -253,11 +253,18 @@ export const DATA = {
         "PR, partnerships, and outreach: expanding community reach and working with builders, developers, designers, and founders.",
     },
     {
+      title: "Miro Meetups Ambassador (APAC)",
+      organization: "Miro",
+      start: "2026-03",
+      end: "2026-07",
+      description: "Organized meetups in Kolkata; community building and partnerships with local tech organizations.",
+    },
+    {
       title: "Core Team Member",
       organization: "DropoutHacks",
       start: "2026-01",
       end: "Present",
-      description: "Hackathon organization, sponsor outreach, event planning, and community coordination.",
+      description: "Hackathon organization, sponsor outreach, event planning, and community coordination for 3,000+ participants.",
       highlights: ["3,000+ Participants"],
     },
     {
@@ -265,19 +272,14 @@ export const DATA = {
       organization: "Machine Learning Kolkata",
       start: "2025-12",
       end: "Present",
+      description: "Community building, organizing ML workshops, study groups, and hackathons for ML enthusiasts in Kolkata.",
     },
     {
       title: "Core Team Member",
       organization: "React Kolkata",
       start: "2025-11",
       end: "Present",
-    },
-    {
-      title: "Miro Meetups Ambassador (APAC)",
-      organization: "Miro",
-      start: "2026-03",
-      end: "2026-07",
-      description: "Organized meetups in Kolkata; community building and partnerships with local tech organizations.",
+      description: "Organizing React.js meetups, workshops, and community events for frontend developers in Kolkata.",
     },
     {
       title: "Mentor",
@@ -307,6 +309,8 @@ export const DATA = {
     {
       title: "Organiser",
       organization: "EDUC-A-THON 2.0",
+      start: "2025-04",
+      end: "2025-04",
       description:
         "Organised a national-level hackathon with 1,400+ participants: logistics, outreach, and a 9-hour innovation sprint for 20 finalist teams.",
       highlights: ["1,400+ Participants"],
@@ -314,6 +318,8 @@ export const DATA = {
     {
       title: "Mentor",
       organization: "Open Source Connect & GSSoC",
+      start: "2025-07",
+      end: "2026-01",
       description:
         "Mentored 50+ developers across full-stack, AI/ML, and Web3 stacks, with architectural guidance on scalability and clean API design.",
       highlights: ["50+ Mentees Guided"],
