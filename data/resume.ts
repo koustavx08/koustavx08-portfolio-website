@@ -19,7 +19,7 @@ export const DATA = {
   headline: "Full-Stack Software Engineer & Web3 Developer",
   description: "Building scalable, user-centric web & AI products that actually ship.",
   summary:
-    "I'm a full-stack engineer and product builder based in Kolkata, India, working across the MERN stack, Web3, and applied AI. As SDE at Dol Tech Labs and Technical Co Head at Samarth TMSL, I build production software end-to-end — from AI-driven SaaS platforms and smart-contract integrations to systems serving hundreds of active users. Outside of shipping code, I lead and mentor across several developer communities in India.",
+    "I'm a full-stack engineer and product builder based in Kolkata, India, working across the MERN stack, Web3, and applied AI. As SDE at Dol Tech Labs and Technical Co Head at Samarth TMSL, I build production software end-to-end: from AI-driven SaaS platforms and smart-contract integrations to systems serving hundreds of active users. Outside of shipping code, I lead and mentor across several developer communities in India.",
   avatarUrl: "/profile-pixelated.png",
   resumeUrl: "/resume.pdf",
 
@@ -94,7 +94,7 @@ export const DATA = {
 
   work: [
     {
-      title: "SDE — Software Development Engineer",
+      title: "Software Development Engineer (SDE)",
       company: "Dol Tech Labs",
       location: "Kolkata, India",
       start: "2026-06",
@@ -239,7 +239,7 @@ export const DATA = {
     },
     {
       school: "K.E. Carmel School, Amtala",
-      degree: "Class XII — Computer Science",
+      degree: "Class XII: Computer Science",
       location: "Kolkata, India",
       start: "2022",
       end: "2024",
@@ -262,7 +262,7 @@ export const DATA = {
       start: "2026-03",
       end: "Present",
       description:
-        "PR, partnerships, and outreach — expanding community reach and working with builders, developers, designers, and founders.",
+        "PR, partnerships, and outreach: expanding community reach and working with builders, developers, designers, and founders.",
     },
     {
       title: "Core Team Member",
@@ -297,7 +297,7 @@ export const DATA = {
       start: "2025-07",
       end: "2026-01",
       description:
-        "Mentored students in full-stack web development — open-source collaboration, PR quality, issue resolution, and code review.",
+        "Mentored students in full-stack web development: open-source collaboration, PR quality, issue resolution, and code review.",
     },
     {
       title: "Mentor",
@@ -320,7 +320,7 @@ export const DATA = {
       title: "Organiser",
       organization: "EDUC-A-THON 2.0",
       description:
-        "Organised a national-level hackathon with 1,400+ participants — logistics, outreach, and a 9-hour innovation sprint for 20 finalist teams.",
+        "Organised a national-level hackathon with 1,400+ participants: logistics, outreach, and a 9-hour innovation sprint for 20 finalist teams.",
       highlights: ["1,400+ Participants"],
     },
     {
@@ -334,7 +334,7 @@ export const DATA = {
 
   achievements: [
     {
-      title: "Open Odyssey — Winner",
+      title: "Open Odyssey: Winner",
       subtitle: "1st Place, Full-Stack Web3 · 120 teams",
       date: "Nov 2024",
       sortDate: "2024-11",
@@ -342,57 +342,57 @@ export const DATA = {
         "Led frontend and smart-contract integration for a decentralized marketplace; won judges' choice for real-world impact.",
     },
     {
-      title: "East India Blockchain Summit — Top 10",
+      title: "East India Blockchain Summit: Top 10",
       subtitle: "Top 10 Project",
       date: "Jan 2025",
       sortDate: "2025-01",
       description: "Selected among the top 10 projects for blockchain innovation and impact.",
     },
     {
-      title: "Hult Prize — On-Campus Winner",
+      title: "Hult Prize: On-Campus Winner",
       subtitle: "Campus Winner, Business Innovation",
       date: "Feb 2025",
       sortDate: "2025-02",
       description: "Won the on-campus Hult Prize competition for a social impact startup idea, leading team ideation and pitch.",
     },
     {
-      title: "Hult Prize — National Top 10",
+      title: "Hult Prize: National Top 10",
       subtitle: "Top 10 at National Finals",
       date: "Apr 2025",
       sortDate: "2025-04",
       description: "Advanced from campus to the national stage and ranked among the top 10 teams nationally.",
     },
     {
-      title: "How-To-Hackathons — Published Article",
+      title: "How-To-Hackathons: Published Article",
       subtitle: "SamarthTech Hashnode",
       date: "Jul 2025",
       sortDate: "2025-07",
       description:
-        "Authored a hands-on guide covering hackathon planning, execution, and pitching — 4k+ reads and community shares.",
+        "Authored a hands-on guide covering hackathon planning, execution, and pitching: 4k+ reads and community shares.",
     },
     {
-      title: "Web3 Hackathons — Finalist",
+      title: "Web3 Hackathons: Finalist",
       subtitle: "Multiple Web3 Hackathon Finalist",
       date: "2025",
       sortDate: "2025",
       description: "Finalist across several Web3 hackathons, delivering fast prototypes integrating smart contracts and DApps.",
     },
     {
-      title: "Open Odyssey 2.0 — Organiser",
+      title: "Open Odyssey 2.0: Organiser",
       subtitle: "MLH Hackathon Program",
       date: "Oct 2025",
       sortDate: "2025-10",
       description: "Organized a large-scale open-source program with 200+ developers and learning pathways for beginners.",
     },
     {
-      title: "CCU Fest — STRUP",
+      title: "CCU Fest: STRUP",
       subtitle: "2 Investor Commitments",
       date: "Nov 2025",
       sortDate: "2025-11",
       description: "Presented a startup idea at CCU Fest STRUP and secured interest from two potential investors.",
     },
     {
-      title: "Hack N Pitch — Finalist",
+      title: "Hack N Pitch: Finalist",
       subtitle: "Pitch Competition Finalist",
       date: "Nov 2024",
       sortDate: "2024-11",
