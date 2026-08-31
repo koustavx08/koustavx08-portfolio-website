@@ -6,7 +6,7 @@ export const testimonials: Testimonial[] = [
       "The most hardworking guy I had in the team. Also a person with real skills not the folks who just make stuff either AI and claim to be \"full stack developers\".",
     name: "Supratim Dhara",
     designation: "Co-Founder & CTO @ bechoHub | Speaker & Hackathon Judge",
-    src: "https://api.dicebear.com/7.x/avataaars/svg?seed=supratim",
+    src: "https://media.licdn.com/dms/image/v2/D5603AQEOZ2gsPkO51w/profile-displayphoto-shrink_200_200/B56ZdTb5DJH8AY-/0/1749451511881?e=1789603200&v=beta&t=FTaK8Lcv5JximMXBrulZTUH4LnOBJzc70tfQTpFGw70",
     linkedin: "https://linkedin.com/in/supratim-dhara",
   },
   {
