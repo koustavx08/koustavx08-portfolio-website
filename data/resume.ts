@@ -336,8 +336,8 @@ export const DATA = {
     {
       title: "HexaFalls S2: 1st Runner Up",
       subtitle: "Best Use of Gemini API · 1st Runner Up, Actian Challenge Track",
-      date: "Aug 2026",
-      sortDate: "2026-08",
+      date: "Jul 2026",
+      sortDate: "2026-07",
       description:
         "Built a full-stack application in 45 hours leveraging Gemini API for intelligent features. Secured dual recognition: 1st Runner Up overall and Best Use of Gemini API, plus 1st Runner Up in Actian Challenge Track.",
     },
