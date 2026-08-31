@@ -192,12 +192,11 @@ export const DATA = {
       ],
     },
     {
-      title: "calorie-detector-app",
-      description: "AI-powered nutrition tracker with real-time image analysis and a voice assistant.",
-      technologies: ["TypeScript", "Next.js", "Groq API", "PWA"],
+      title: "trace-x",
+      description: "AI-powered debugging and tracing platform for distributed systems with real-time observability.",
+      technologies: ["TypeScript", "Next.js", "Python", "PostgreSQL"],
       links: [
-        { type: "Website", href: "https://calorie-detector-app-koustavx08.vercel.app/", icon: Globe },
-        { type: "Source", href: "https://github.com/koustavx08/calorie-detector-app", icon: Github },
+        { type: "Source", href: "https://github.com/koustavx08/trace-x", icon: Github },
       ],
     },
     {
@@ -210,12 +209,11 @@ export const DATA = {
       ],
     },
     {
-      title: "event-organizer",
-      description: "Full-featured event management platform built with Next.js and MongoDB.",
-      technologies: ["TypeScript", "Next.js", "MongoDB", "Clerk"],
+      title: "recoverai",
+      description: "AI-powered disaster recovery planning platform with automated backup orchestration and compliance reporting.",
+      technologies: ["TypeScript", "Next.js", "Python", "AWS"],
       links: [
-        { type: "Website", href: "https://event-organizer-koustavx08.vercel.app/", icon: Globe },
-        { type: "Source", href: "https://github.com/koustavx08/event-organizer", icon: Github },
+        { type: "Source", href: "https://github.com/koustavx08/recoverai", icon: Github },
       ],
     },
     {
