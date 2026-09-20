@@ -1,6 +1,6 @@
 "use client"
 
-import { AnimatePresence, motion, useReducedMotion, type Variants } from "motion/react"
+import { motion, useReducedMotion, type Variants } from "motion/react"
 import type { ReactNode } from "react"
 
 interface BlurFadeProps {
@@ -30,18 +30,16 @@ export function BlurFade({
   }
 
   return (
-    <AnimatePresence>
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        whileInView={inView ? "visible" : undefined}
-        viewport={inView ? { once: true, margin: inViewMargin } : undefined}
-        variants={variants}
-        transition={{ delay: shouldReduceMotion ? 0 : delay, duration: shouldReduceMotion ? 0 : duration, ease: "easeOut" }}
-        className={className}
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      whileInView={inView ? "visible" : undefined}
+      viewport={inView ? { once: true, margin: inViewMargin } : undefined}
+      variants={variants}
+      transition={{ delay: shouldReduceMotion ? 0 : delay, duration: shouldReduceMotion ? 0 : duration, ease: "easeOut" }}
+      className={className}
+    >
+      {children}
+    </motion.div>
   )
 }

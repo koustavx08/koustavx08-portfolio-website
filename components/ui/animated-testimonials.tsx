@@ -1,17 +1,22 @@
 "use client";
 
+import Image from "next/image";
 import { ChevronLeft, ChevronRight, Linkedin } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-type Testimonial = {
+export type Testimonial = {
   quote: string;
   name: string;
   designation: string;
   src: string;
   linkedin?: string;
 };
+
+/** Deterministic per-index tilt. Math.random() here would differ between the
+ *  server and client renders and trip a hydration mismatch. */
+const tiltFor = (index: number) => ((index * 37) % 21) - 10;
 
 export const AnimatedTestimonials = ({
   testimonials,
@@ -23,6 +28,7 @@ export const AnimatedTestimonials = ({
   className?: string;
 }) => {
   const [active, setActive] = useState(0);
+  const shouldReduceMotion = useReducedMotion();
 
   const handleNext = () => {
     setActive((prev) => (prev + 1) % testimonials.length);
@@ -35,53 +41,39 @@ export const AnimatedTestimonials = ({
   const isActive = (index: number) => index === active;
 
   useEffect(() => {
-    if (autoplay) {
-      const interval = setInterval(handleNext, 5000);
-      return () => clearInterval(interval);
-    }
-  }, [autoplay]);
-
-  const randomRotateY = () => Math.floor(Math.random() * 21) - 10;
+    // Autoplay is unattended motion, so honour the reduced-motion preference.
+    if (!autoplay || shouldReduceMotion) return;
+    const interval = setInterval(handleNext, 5000);
+    return () => clearInterval(interval);
+  }, [autoplay, shouldReduceMotion]);
 
   return (
     <div className={cn("mx-auto max-w-4xl px-4 py-16", className)}>
       <div className="relative grid gap-12 md:grid-cols-[1fr_1.2fr]">
         <div className="relative h-72 md:h-80">
-          <AnimatePresence mode="wait">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.src}
-                initial={{
-                  opacity: 0,
-                  scale: 0.9,
-                  rotateY: randomRotateY(),
-                }}
-                animate={{
-                  opacity: isActive(index) ? 1 : 0.5,
-                  scale: isActive(index) ? 1 : 0.9,
-                  rotateY: isActive(index) ? 0 : randomRotateY(),
-                  zIndex: isActive(index) ? 40 : testimonials.length - index,
-                  y: isActive(index) ? [0, -60, 0] : 0,
-                }}
-                exit={{
-                  opacity: 0,
-                  scale: 0.9,
-                  rotateY: randomRotateY(),
-                }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="absolute inset-0 origin-bottom"
-              >
-                <img
-                  src={testimonial.src}
-                  alt={testimonial.name}
-                  width={500}
-                  height={500}
-                  draggable={false}
-                  className="h-full w-full rounded-2xl object-cover object-center shadow-neo-soft"
-                />
-              </motion.div>
-            ))}
-          </AnimatePresence>
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={testimonial.src}
+              initial={false}
+              animate={{
+                opacity: isActive(index) ? 1 : 0.5,
+                scale: isActive(index) ? 1 : 0.9,
+                rotateY: isActive(index) ? 0 : tiltFor(index),
+                zIndex: isActive(index) ? 40 : testimonials.length - index,
+              }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="absolute inset-0 origin-bottom"
+            >
+              <Image
+                src={testimonial.src}
+                alt={testimonial.name}
+                fill
+                sizes="(min-width: 768px) 40vw, 90vw"
+                draggable={false}
+                className="rounded-2xl object-cover object-center shadow-neo-soft"
+              />
+            </motion.div>
+          ))}
         </div>
 
         <div className="flex flex-col justify-center py-4">
@@ -111,22 +103,13 @@ export const AnimatedTestimonials = ({
                   LinkedIn
                 </a>
               )}
-              <motion.p className="mt-6 text-base text-muted-foreground/90 leading-relaxed">
-                {testimonials[active].quote.split(" ").map((word, i) => (
-                  <motion.span
-                    key={i}
-                    initial={{ filter: "blur(8px)", opacity: 0, y: 4 }}
-                    animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.15,
-                      ease: "easeInOut",
-                      delay: 0.015 * i,
-                    }}
-                    className="inline-block"
-                  >
-                    {word}&nbsp;
-                  </motion.span>
-                ))}
+              <motion.p
+                initial={{ filter: "blur(8px)", opacity: 0 }}
+                animate={{ filter: "blur(0px)", opacity: 1 }}
+                transition={{ duration: 0.3, ease: "easeInOut", delay: 0.1 }}
+                className="mt-6 text-base text-muted-foreground/90 leading-relaxed"
+              >
+                {testimonials[active].quote}
               </motion.p>
             </motion.div>
           </AnimatePresence>

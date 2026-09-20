@@ -41,10 +41,7 @@ const FloatingDockMobile = ({
     <div className={cn("relative block md:hidden", className)}>
       <AnimatePresence>
         {open && (
-          <motion.div
-            layoutId="nav"
-            className="absolute inset-x-0 bottom-full mb-2 flex flex-col gap-2"
-          >
+          <motion.div className="absolute inset-x-0 bottom-full mb-2 flex flex-col gap-2">
             {items.map((item, idx) => (
               <motion.div
                 key={item.title}
@@ -64,10 +61,13 @@ const FloatingDockMobile = ({
               >
                 <a
                   href={item.href}
-                  key={item.title}
+                  aria-label={item.title}
+                  onClick={() => setOpen(false)}
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-card shadow-neo-soft border border-border"
                 >
-                  <div className="h-4 w-4">{item.icon}</div>
+                  <div className="h-4 w-4" aria-hidden>
+                    {item.icon}
+                  </div>
                 </a>
               </motion.div>
             ))}
@@ -78,6 +78,7 @@ const FloatingDockMobile = ({
         onClick={() => setOpen(!open)}
         className="flex h-10 w-10 items-center justify-center rounded-full bg-card shadow-neo-soft border border-border"
         aria-label={open ? "Close menu" : "Open menu"}
+        aria-expanded={open}
       >
         {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </button>
@@ -92,7 +93,7 @@ const FloatingDockDesktop = ({
   items: { title: string; icon: React.ReactNode; href: string }[];
   className?: string;
 }) => {
-  let mouseX = useMotionValue(Infinity);
+  const mouseX = useMotionValue(Infinity);
   return (
     <motion.div
       onMouseMove={(e) => mouseX.set(e.pageX)}
@@ -120,53 +121,26 @@ function IconContainer({
   icon: React.ReactNode;
   href: string;
 }) {
-  let ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
-  let distance = useTransform(mouseX, (val) => {
-    let bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
+  const distance = useTransform(mouseX, (val) => {
+    const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
 
     return val - bounds.x - bounds.width / 2;
   });
 
-  let widthTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
-  let heightTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
-
-  let widthTransformIcon = useTransform(distance, [-150, 0, 150], [20, 40, 20]);
-  let heightTransformIcon = useTransform(
-    distance,
-    [-150, 0, 150],
-    [20, 40, 20],
-  );
-
-  let width = useSpring(widthTransform, {
-    mass: 0.1,
-    stiffness: 150,
-    damping: 12,
-  });
-  let height = useSpring(heightTransform, {
-    mass: 0.1,
-    stiffness: 150,
-    damping: 12,
-  });
-
-  let widthIcon = useSpring(widthTransformIcon, {
-    mass: 0.1,
-    stiffness: 150,
-    damping: 12,
-  });
-  let heightIcon = useSpring(heightTransformIcon, {
-    mass: 0.1,
-    stiffness: 150,
-    damping: 12,
-  });
+  // The container is square and so is the icon, so one spring drives both axes.
+  const spring = { mass: 0.1, stiffness: 150, damping: 12 };
+  const size = useSpring(useTransform(distance, [-150, 0, 150], [40, 80, 40]), spring);
+  const iconSize = useSpring(useTransform(distance, [-150, 0, 150], [20, 40, 20]), spring);
 
   const [hovered, setHovered] = useState(false);
 
   return (
-    <a href={href}>
+    <a href={href} aria-label={title}>
       <motion.div
         ref={ref}
-        style={{ width, height }}
+        style={{ width: size, height: size }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         className="relative flex aspect-square items-center justify-center rounded-full bg-card-elevated shadow-neo-inset border border-border/50"
@@ -184,8 +158,9 @@ function IconContainer({
           )}
         </AnimatePresence>
         <motion.div
-          style={{ width: widthIcon, height: heightIcon }}
+          style={{ width: iconSize, height: iconSize }}
           className="flex items-center justify-center"
+          aria-hidden
         >
           {icon}
         </motion.div>
