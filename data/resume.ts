@@ -241,12 +241,12 @@ export const DATA = {
 
   leadership: [
     {
-      title: "PR and Outreach Lead",
+      title: "Lead Organiser & PR/Outreach Lead",
       organization: "CalTech Circle",
       start: "2026-03",
       end: "Present",
       description:
-        "PR, partnerships, and outreach: expanding community reach and working with builders, developers, designers, and founders.",
+        "Leading community organisation alongside PR, partnerships, and outreach: expanding community reach and working with builders, developers, designers, and founders.",
     },
     {
       title: "Miro Meetups Ambassador (APAC)",
