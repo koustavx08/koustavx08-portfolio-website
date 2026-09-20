@@ -2,28 +2,21 @@ import { ArrowUpRight } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import type { Project } from "@/lib/types"
 
-function slugToTitle(slug: string) {
-  return slug
-    .replace(/[-_]/g, " ")
-    .replace(/([a-z])([A-Z])/g, "$1 $2")
-    .split(" ")
-    .map((w) => (w.length > 2 ? w[0].toUpperCase() + w.slice(1) : w))
-    .join(" ")
-}
-
 export function ProjectCard({ project }: { project: Project }) {
-  const websiteHref = project.links.find((l) => l.type === "Website")?.href
+  // Not every project has a live site (AutoLayout.ai is source-only), and an
+  // <a> with no href is not focusable, so fall back to the first link there is.
+  const titleHref = project.links.find((l) => l.type === "Website")?.href ?? project.links[0]?.href
 
   return (
     <div className="flex h-full flex-col rounded-xl border border-border bg-card p-5 transition-all hover:ring-2 hover:ring-muted">
       <div className="flex items-start justify-between gap-2">
         <a
-          href={websiteHref}
+          href={titleHref}
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center gap-1 font-semibold text-foreground"
         >
-          {slugToTitle(project.title)}
+          {project.title}
           <ArrowUpRight className="size-3.5 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden />
         </a>
         <div className="flex shrink-0 gap-1.5">

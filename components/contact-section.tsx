@@ -20,6 +20,37 @@ type FormErrors = {
   message?: string
 }
 
+const inputClass = (hasError: boolean) =>
+  `w-full rounded-md border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring ${
+    hasError ? "border-destructive" : "border-input"
+  }`
+
+function Field({
+  id,
+  label,
+  error,
+  children,
+}: {
+  id: string
+  label: string
+  error?: string
+  children: React.ReactNode
+}) {
+  return (
+    <div>
+      <label htmlFor={id} className="mb-1.5 block text-sm font-medium text-foreground">
+        {label}
+      </label>
+      {children}
+      {error && (
+        <p id={`${id}-error`} className="mt-1.5 text-xs text-destructive" role="alert">
+          {error}
+        </p>
+      )}
+    </div>
+  )
+}
+
 export function ContactSection() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [errors, setErrors] = useState<FormErrors>({})
@@ -148,10 +179,7 @@ export function ContactSection() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-              <div>
-                <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-foreground">
-                  Name
-                </label>
+              <Field id="name" label="Name" error={errors.name}>
                 <input
                   ref={nameRef}
                   type="text"
@@ -163,20 +191,12 @@ export function ContactSection() {
                   onBlur={() => handleBlur("name")}
                   aria-invalid={!!errors.name}
                   aria-describedby={errors.name ? "name-error" : undefined}
-                  className={`w-full rounded-md border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring ${errors.name ? "border-destructive" : "border-input"}`}
+                  className={inputClass(!!errors.name)}
                   placeholder="Your name"
                 />
-                {errors.name && (
-                  <p id="name-error" className="mt-1.5 text-xs text-destructive" role="alert">
-                    {errors.name}
-                  </p>
-                )}
-              </div>
+              </Field>
 
-              <div>
-                <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-foreground">
-                  Email
-                </label>
+              <Field id="email" label="Email" error={errors.email}>
                 <input
                   ref={emailRef}
                   type="email"
@@ -189,20 +209,12 @@ export function ContactSection() {
                   onBlur={() => handleBlur("email")}
                   aria-invalid={!!errors.email}
                   aria-describedby={errors.email ? "email-error" : undefined}
-                  className={`w-full rounded-md border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring ${errors.email ? "border-destructive" : "border-input"}`}
+                  className={inputClass(!!errors.email)}
                   placeholder="your@email.com"
                 />
-                {errors.email && (
-                  <p id="email-error" className="mt-1.5 text-xs text-destructive" role="alert">
-                    {errors.email}
-                  </p>
-                )}
-              </div>
+              </Field>
 
-              <div>
-                <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-foreground">
-                  Message
-                </label>
+              <Field id="message" label="Message" error={errors.message}>
                 <textarea
                   ref={messageRef}
                   id="message"
@@ -214,15 +226,10 @@ export function ContactSection() {
                   onBlur={() => handleBlur("message")}
                   aria-invalid={!!errors.message}
                   aria-describedby={errors.message ? "message-error" : undefined}
-                  className={`w-full resize-none rounded-md border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring ${errors.message ? "border-destructive" : "border-input"}`}
+                  className={`resize-none ${inputClass(!!errors.message)}`}
                   placeholder="Your message…"
                 />
-                {errors.message && (
-                  <p id="message-error" className="mt-1.5 text-xs text-destructive" role="alert">
-                    {errors.message}
-                  </p>
-                )}
-              </div>
+              </Field>
 
               {submitError && (
                 <div className="rounded-md bg-destructive/10 p-3 text-sm text-destructive" role="alert">

@@ -1,5 +1,4 @@
 import { SectionHeader } from "@/components/section-header"
-import { Badge } from "@/components/ui/badge"
 import { BlurFade } from "@/components/magicui/blur-fade"
 import { DATA } from "@/data/resume"
 
@@ -17,7 +16,7 @@ export function AchievementsSection() {
 
         <BlurFade>
           <div className="space-y-4">
-            {sortedAchievements.map((item, index) => (
+            {sortedAchievements.map((item) => (
               <article
                 key={item.title}
                 className="group relative rounded-xl border border-border/50 bg-card p-5 transition-all hover:border-border hover:shadow-neo-sm"

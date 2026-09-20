@@ -43,25 +43,21 @@ export const DATA = {
         name: "GitHub",
         url: "https://github.com/koustavx08",
         icon: Github,
-        navbar: true,
       },
       LinkedIn: {
         name: "LinkedIn",
         url: "https://linkedin.com/in/koustavx08",
         icon: Linkedin,
-        navbar: true,
       },
       Email: {
         name: "Email",
         url: "mailto:koustavsinghcollege@gmail.com",
         icon: Mail,
-        navbar: true,
       },
       Instagram: {
         name: "Instagram",
         url: "https://instagram.com/koustavx08",
         icon: Instagram,
-        navbar: true,
       },
     } satisfies Record<string, SocialLink>,
   },
@@ -181,7 +177,7 @@ export const DATA = {
 
   projects: [
     {
-      title: "synthamint-platform",
+      title: "SynthaMint Platform",
       description: "AI-powered NFT minting platform transforming creative ideas into unique digital assets.",
       technologies: ["TypeScript", "Next.js", "IPFS", "Solidity"],
       links: [
@@ -190,7 +186,7 @@ export const DATA = {
       ],
     },
     {
-      title: "atscribe",
+      title: "ATScribe",
       description: "Production-ready MERN app for creating ATS-optimized resumes using AI.",
       technologies: ["TypeScript", "React", "Node.js", "MongoDB"],
       links: [
@@ -199,7 +195,7 @@ export const DATA = {
       ],
     },
     {
-      title: "autolayout.ai",
+      title: "AutoLayout.ai",
       description: "React Native app that converts hand-drawn UI wireframes to working React Native code using on-device TFLite object detection (EfficientDet-Lite0), with optional Gemini-powered design enhancement via RAG.",
       technologies: ["TypeScript", "React Native", "Expo", "TFLite", "Gemini API", "Express", "MongoDB", "Actian VectorAI"],
       links: [
@@ -207,7 +203,7 @@ export const DATA = {
       ],
     },
     {
-      title: "claimr",
+      title: "Claimr",
       description: "Centralized claim management platform (Claimrbro) with claim creation, status tracking, authentication, and responsive UI. Forked and extended from kekubhai/claimr.",
       technologies: ["TypeScript", "React", "Node.js", "PostgreSQL", "JWT"],
       links: [

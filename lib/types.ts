@@ -9,7 +9,6 @@ export interface SocialLink {
   name: string
   url: string
   icon: LucideIcon
-  navbar: boolean
 }
 
 export interface SkillCategory {

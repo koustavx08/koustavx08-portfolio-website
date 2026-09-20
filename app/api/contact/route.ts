@@ -4,8 +4,32 @@ import { DATA } from "@/data/resume"
 
 const CONTACT_RECEIVER = DATA.contact.email
 
+const RATE_LIMIT = 3
+const RATE_WINDOW_MS = 10 * 60 * 1000
+// ponytail: per-instance in-memory counter. A serverless fleet gives each
+// instance its own map, so the real ceiling is RATE_LIMIT × instance count.
+// Good enough to stop a single script; move to Upstash/Redis if it isn't.
+const hits = new Map<string, number[]>()
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now()
+  const recent = (hits.get(ip) ?? []).filter((t) => now - t < RATE_WINDOW_MS)
+  if (recent.length >= RATE_LIMIT) {
+    hits.set(ip, recent)
+    return true
+  }
+  recent.push(now)
+  hits.set(ip, recent)
+  return false
+}
+
 export async function POST(request: NextRequest) {
   try {
+    const ip = request.headers.get("x-forwarded-for")?.split(",")[0].trim() || "unknown"
+    if (isRateLimited(ip)) {
+      return NextResponse.json({ error: "Too many messages. Please try again later." }, { status: 429 })
+    }
+
     const { name, email, message } = await request.json()
 
     // Validate required fields
