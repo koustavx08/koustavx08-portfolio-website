@@ -19,7 +19,7 @@ export const DATA = {
   headline: "Full-Stack Software Engineer & Web3 Developer",
   description: "Building scalable, user-centric web & AI products that actually ship.",
   summary:
-    "I'm a full-stack engineer and product builder based in Kolkata, India, working across the MERN stack, Web3, and applied AI. As SDE at Dol Tech Labs and Technical Co Head at Samarth TMSL, I build production software end-to-end: from AI-driven SaaS platforms and smart-contract integrations to systems serving hundreds of active users. Outside of shipping code, I lead and mentor across several developer communities in India.",
+    "I'm a full-stack engineer and product builder based in Kolkata, India, working across the MERN stack, Web3, and applied AI. As Technical Team Lead at Blobly and Technical Co Head at Samarth TMSL, I build production software end-to-end: from AI-driven SaaS platforms and smart-contract integrations to systems serving hundreds of active users. Outside of shipping code, I lead and mentor across several developer communities in India.",
   avatarUrl: "/profile-pixelated.png",
   resumeUrl: "/resume.pdf",
 
@@ -97,17 +97,17 @@ export const DATA = {
 
   work: [
     {
-      title: "Software Development Engineer (SDE)",
-      company: "Dol Tech Labs",
-      location: "Kolkata, India",
+      title: "Technical Team Lead",
+      company: "Blobly",
+      location: "Kolkata, India (Part-time, Remote)",
       start: "2026-06",
       end: "Present",
       bullets: [
-        "Contributing to scalable software solutions and developer-focused products",
-        "Collaborating on application development and system design",
-        "Technical problem solving and product discussions",
-        "Feature implementation, testing and deployment workflows",
-        "Engineering best practices and modern development tools",
+        "Leading technical development and implementation of software solutions, focused on scalable applications and developer-facing products",
+        "Collaborating with engineering teams on system design, architecture, feature development and technical problem solving",
+        "Driving features across the full development lifecycle: planning, implementation, testing, debugging and deployment",
+        "Working with modern APIs, databases, version control and development workflows to build reliable, maintainable software",
+        "Contributing to technical decision-making and product discussions while improving development practices and engineering efficiency",
       ],
     },
     {
